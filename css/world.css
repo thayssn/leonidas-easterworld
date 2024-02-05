@@ -1,0 +1,4512 @@
+.blanche {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.logo_easter {
+  background: transparent url("../img/logo_easter_world.png") no-repeat center;
+  width: 183px;
+  height: 244px;
+  display: none;
+}
+.comming_easter {
+  width: 183px;
+  height: 244px;
+  display: none;
+}
+
+#world {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  position: relative;
+  z-index: 0;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  padding: 0;
+}
+#world.wave1 .world2,
+#world.wave1 .world3 {
+  display: none;
+}
+#world.wave2 .world3 {
+  display: none;
+}
+
+#world .world1 {
+  position: absolute;
+  width: 1769px;
+  height: 2670px;
+  top: 2258px;
+  left: 2296px;
+}
+
+#world .world2 {
+  position: absolute;
+  width: 3400px;
+  height: 3450px;
+  top: 2450px;
+  left: 160px;
+}
+#world .world3 {
+  position: absolute;
+  width: 2800px;
+  height: 3400px;
+  top: 250px;
+  left: 950px;
+}
+
+#world #fundo {
+  position: absolute;
+  top: -500px;
+  left: -300px;
+  width: 4677px;
+  height: 6067px;
+}
+#fundo div div {
+  position: absolute;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
+#fundo .referencia,
+#fundo .mapa {
+  position: absolute;
+  width: 4677px;
+  height: 6067px;
+  opacity: 1;
+  top: -557px;
+  left: -2300px;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+#fundo .referencia {
+  opacity: 0;
+  background: transparent url("../img/fundo_com_elementos.png") no-repeat center;
+  background-size: contain;
+}
+
+.wave1 #fundo .mapa {
+  background: transparent url("../img/fundo_fase1.png") no-repeat center;
+  background-size: contain;
+}
+.wave2 #fundo .mapa {
+  background: transparent url("../img/fundo_fase2.png") no-repeat center;
+  background-size: contain;
+}
+.wave3 #fundo .mapa {
+  background: transparent url("../img/fundo_fase3.png") no-repeat center;
+  background-size: contain;
+}
+
+#debug {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+  opacity: 0.9;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  color: #0c4da2;
+  font-size: 0.7em;
+}
+#world button {
+  z-index: 10;
+}
+.seta {
+  position: absolute;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
+  z-index: 400;
+  cursor: pointer;
+}
+.seta.top {
+  background-image: url("../img/seta_top.png");
+  top: 10px;
+  left: 50%;
+  margin-left: -40px;
+}
+.seta.top:active {
+  background-image: url("../img/seta_top_ativa.png");
+}
+.seta.right {
+  background-image: url("../img/seta_right.png");
+  right: 10px;
+  top: 50%;
+  margin-top: -40px;
+}
+.seta.right:active {
+  background-image: url("../img/seta_right_ativa.png");
+}
+.seta.bottom {
+  background-image: url("../img/seta_bottom.png");
+  bottom: 10px;
+  left: 50%;
+  margin-left: -40px;
+}
+.seta.bottom:active {
+  background-image: url("../img/seta_bottom_ativa.png");
+}
+.seta.left {
+  background-image: url("../img/seta_left.png");
+  left: 10px;
+  top: 50%;
+  margin-top: -40px;
+}
+.seta.left:active {
+  background-image: url("../img/seta_left_ativa.png");
+}
+
+.cloud {
+  background-image: url("../img/nuvem.png");
+  background-size: contain;
+  width: 502px;
+  height: 135px;
+  position: absolute;
+  z-index: 2;
+}
+.montanha {
+  background-image: url("../img/montanha_azul_pequena.png");
+  width: 502px;
+  height: 135px;
+  top: 300px;
+  left: 300px;
+}
+#montanha1 {
+  background-image: url("../img/montanha_azul.png");
+  height: 313px;
+  left: 748px;
+  top: 321px;
+  width: 300px;
+}
+#montanha2 {
+  background-image: url("../img/montanha_azul_pequena.png");
+  height: 253px;
+  left: 1178px;
+  top: 333px;
+  width: 240px;
+}
+#montanha3 {
+  background-image: url("../img/montanha_cinza_escuro.png");
+  height: 422px;
+  left: 1079px;
+  top: 798px;
+  width: 456px;
+}
+#montanha4 {
+  background-image: url("../img/montanha_cinza_claro.png");
+  height: 449px;
+  left: 804px;
+  top: 967px;
+  width: 533px;
+}
+#teleferico {
+  left: 680px;
+  top: 860px;
+  width: 630px;
+  height: 500px;
+}
+#teleferico .cabo {
+  background-image: url("../img/teleferico_cabo.png");
+  width: 589px;
+  height: 445px;
+  top: -7px;
+}
+#teleferico .conjunto {
+  height: 166px;
+  width: 97px;
+  top: 359px;
+  left: 6px;
+}
+#teleferico .haste {
+  background-image: url("../img/teleferico_haste.png");
+  height: 72px;
+  width: 40px;
+  top: 0px;
+  left: 27px;
+}
+#teleferico .bonde {
+  background-image: url("../img/teleferico_bonde.png");
+  height: 125px;
+  width: 97px;
+  top: 38px;
+  left: 0px;
+}
+#observatorio {
+  background-image: url("../img/observatorio.png");
+  left: 1236px;
+  top: 735px;
+  width: 154px;
+  height: 113px;
+}
+#observatorio .luneta {
+  -webkit-border-radius: 40%;
+  border-radius: 40%;
+  height: 28px;
+  width: 28px;
+  background-color: #0c4da2;
+  top: 8px;
+  left: 62px;
+}
+#observatorio .lente {
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 5px solid #ccc;
+  height: 28px;
+  width: 28px;
+  top: 0;
+}
+#observatorio .porta {
+  -webkit-border-radius: 39% 39% 0 0;
+  border-radius: 39% 39% 0 0;
+  background-color: yellow;
+  height: 39px;
+  width: 26px;
+  top: 65px;
+  left: 63px;
+  opacity: 0;
+}
+#estacao {
+  background-image: url("../img/estacao.png");
+  left: 376px;
+  top: 1022px;
+  width: 427px;
+  height: 360px;
+}
+#estacao .janela {
+  -webkit-border-radius: 40% 40% 0 0;
+  border-radius: 40% 40% 0 0;
+  background-color: yellow;
+  height: 30px;
+  width: 20px;
+  top: 158px;
+  left: 46px;
+  box-shadow: 0 0 20px #ffffff;
+}
+#estacao .janela:nth-of-type(1) {
+  top: 267px;
+  left: 46px;
+}
+#estacao .janela:nth-of-type(2) {
+  top: 213px;
+  left: 46px;
+}
+#estacao .janela:nth-of-type(3) {
+  top: 158px;
+  left: 46px;
+}
+#estacao .janela:nth-of-type(4) {
+  top: 158px;
+  left: 95px;
+}
+#estacao .janela:nth-of-type(5) {
+  top: 158px;
+  left: 144px;
+}
+#estacao .janela:nth-of-type(6) {
+  top: 158px;
+  left: 193px;
+}
+#estacao .janela:nth-of-type(7) {
+  top: 213px;
+  left: 193px;
+}
+#estacao .janela:nth-of-type(8) {
+  top: 267px;
+  left: 193px;
+}
+#estacao .relogio {
+  background-image: url("../img/estacao_relogio.png");
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  top: 81px;
+  left: 100px;
+}
+.poste {
+  background-image: url("../img/poste.png");
+  height: 164px;
+  width: 60px;
+}
+.poste .light {
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  top: -17px;
+  left: -10px;
+  box-shadow: 0 0 30px #ffffff;
+}
+.poste .laco {
+  width: 46px;
+  height: 22px;
+  top: 67px;
+  left: 8px;
+}
+.poste .laco.amarelo {
+  background-image: url("../img/poste_laco.png");
+}
+.poste .laco.azul {
+  background-image: url("../img/poste_laco_azul.png");
+}
+.poste .laco.verde {
+  background-image: url("../img/poste_laco_verde.png");
+}
+
+#poste1 {
+  top: 1259px;
+  left: 689px;
+}
+#poste2 {
+  top: 2502px;
+  left: 2022px;
+}
+#poste3 {
+  top: 2506px;
+  left: 1635px;
+}
+#poste4 {
+  width: 22px;
+  height: 129px;
+  top: 2195px;
+  left: 1730px;
+}
+#poste5 {
+  top: 2077px;
+  left: 1128px;
+}
+#poste6 {
+  top: 1107px;
+  left: 1181px;
+}
+#poste7 {
+  top: 1104px;
+  left: 1896px;
+}
+#poste8 {
+  top: 1646px;
+  left: 2201px;
+}
+#poste9 {
+  top: 1499px;
+  left: 1644px;
+}
+#poste10 {
+  top: 1391px;
+  left: 665px;
+}
+#poste11 {
+  top: 1834px;
+  left: 1840px;
+}
+#poste12 {
+  top: 1889px;
+  left: 263px;
+}
+#poste13 {
+  top: 2171px;
+  left: 820px;
+}
+#poste14 {
+  top: 2649px;
+  left: 1314px;
+}
+#poste15 {
+  top: 1752px;
+  left: 2443px;
+}
+#poste16 {
+  top: 437px;
+  left: 714px;
+}
+#poste17 {
+  top: 324px;
+  left: 1860px;
+}
+#poste18 {
+  top: 718px;
+  left: 2028px;
+}
+
+#boneco {
+  height: 137px;
+  width: 117px;
+  top: 1369px;
+  left: 580px;
+}
+#boneco .orelha.esquerda {
+  background-image: url("../img/boneco_orelha_esquerda.png");
+  height: 48px;
+  width: 57px;
+  top: 0px;
+  left: 17px;
+}
+#boneco .orelha.direita {
+  background-image: url("../img/boneco_orelha_direita.png");
+  height: 48px;
+  width: 57px;
+  top: 0px;
+  left: 44px;
+}
+#boneco .cabeca {
+  background-color: #ffffff;
+  height: 47px;
+  width: 47px;
+  top: 37px;
+  left: 36px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+#boneco .corpo {
+  background-color: #ffffff;
+  height: 60px;
+  width: 60px;
+  top: 76px;
+  left: 29px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+#boneco .agua {
+  height: 30px;
+  width: 100%;
+  bottom: -10px;
+  background-color: rgba(70, 180, 200, 0.5);
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+#boneco .olho.esquerdo {
+  background-color: #1b2b61;
+  height: 5px;
+  width: 5px;
+  top: 59px;
+  left: 48px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+#boneco .olho.direito {
+  background-color: #1b2b61;
+  height: 5px;
+  width: 5px;
+  top: 59px;
+  left: 66px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+#boneco .braco.esquerdo {
+  background-image: url("../img/boneco_braco_esquerdo.png");
+  height: 28px;
+  width: 28px;
+  top: 67px;
+  left: 9px;
+}
+#boneco .braco.direito {
+  background-image: url("../img/boneco_braco_direito.png");
+  height: 28px;
+  width: 28px;
+  top: 67px;
+  left: 77px;
+}
+#boneco .botao.cima {
+  background-color: #1b2b61;
+  height: 5px;
+  width: 5px;
+  top: 91px;
+  left: 57px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+#boneco .botao.baixo {
+  background-color: #1b2b61;
+  height: 5px;
+  width: 5px;
+  top: 110px;
+  left: 57px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.ave {
+  height: 72px;
+  width: 45px;
+  top: 1013px;
+  left: 355px;
+}
+
+.ave .corpo {
+  background-image: url("../img/ave_corpo.png");
+  height: 66px;
+  width: 45px;
+}
+.ave .olhos {
+  background-image: url("../img/ave_olhos.png");
+  height: 13px;
+  width: 21px;
+  top: 23px;
+  left: 15px;
+}
+.ave .pes {
+  background-image: url("../img/ave_pes.png");
+  height: 12px;
+  width: 16px;
+  top: 61px;
+  left: 15px;
+}
+
+.ave.verde .corpo {
+  background-image: url("../img/ave_corpo_verde.png");
+}
+.ave.verde .pes {
+  background-image: url("../img/ave_pes_verdes.png");
+}
+.ave.creme .corpo {
+  background-image: url("../img/ave_corpo_creme.png");
+  height: 64px;
+  width: 44px;
+  top: 3px;
+  left: -2px;
+}
+.ave.creme .pes {
+  background-image: url("../img/ave_pes_verdes.png");
+}
+
+.ave.tipo1 .corpo {
+  background-image: url("../img/ave_1_corpo.png");
+}
+.ave.tipo1 .pes {
+  background-image: url("../img/ave_1_pes.png");
+}
+.ave.tipo2 .corpo {
+  background-image: url("../img/ave_2_corpo.png");
+}
+.ave.tipo2 .pes {
+  background-image: url("../img/ave_2_pes.png");
+}
+.ave.tipo3 .corpo {
+  background-image: url("../img/ave_3_corpo.png");
+}
+.ave.tipo3 .pes {
+  background-image: url("../img/ave_3_pes.png");
+}
+.ave.tipo4 .corpo {
+  background-image: url("../img/ave_4_corpo.png");
+}
+.ave.tipo4 .pes {
+  background-image: url("../img/ave_4_pes.png");
+}
+.ave.tipo5 .corpo {
+  background-image: url("../img/ave_5_corpo.png");
+}
+.ave.tipo5 .pes {
+  background-image: url("../img/ave_5_pes.png");
+}
+.ave.tipo6 .corpo {
+  background-image: url("../img/ave_6_corpo.png");
+}
+.ave.tipo6 .pes {
+  background-image: url("../img/ave_6_pes.png");
+}
+.ave.tipo6 .olhos {
+  top: 22px;
+  left: 18px;
+}
+.ave.tipo7 .corpo {
+  background-image: url("../img/ave_7_corpo.png");
+}
+.ave.tipo7 .pes {
+  background-image: url("../img/ave_7_pes.png");
+}
+.ave.tipo8 .corpo {
+  background-image: url("../img/ave_8_corpo.png");
+}
+.ave.tipo8 .pes {
+  background-image: url("../img/ave_8_pes.png");
+}
+.ave.tipo9 .corpo {
+  background-image: url("../img/ave_9_corpo.png");
+}
+.ave.tipo9 .pes {
+  background-image: url("../img/ave_9_pes.png");
+}
+.ave.tipo10 .corpo {
+  background-image: url("../img/ave_10_corpo.png");
+}
+.ave.tipo10 .pes {
+  background-image: url("../img/ave_10_pes.png");
+}
+.ave.tipo11 .corpo {
+  background-image: url("../img/ave_11_corpo.png");
+}
+.ave.tipo11 .pes {
+  background-image: url("../img/ave_11_pes.png");
+}
+.ave.tipo12 .corpo {
+  background-image: url("../img/ave_12_corpo.png");
+}
+.ave.tipo12 .pes {
+  background-image: url("../img/ave_12_pes.png");
+}
+.ave.tipo13 .corpo {
+  background-image: url("../img/ave_13_corpo.png");
+}
+.ave.tipo13 .pes {
+  background-image: url("../img/ave_13_pes.png");
+}
+.ave.tipo14 .corpo {
+  background-image: url("../img/ave_14_corpo.png");
+}
+.ave.tipo14 .pes {
+  background-image: url("../img/ave_14_pes.png");
+}
+.ave.tipo15 .corpo {
+  background-image: url("../img/ave_15_corpo.png");
+}
+.ave.tipo15 .pes {
+  background-image: url("../img/ave_15_pes.png");
+}
+#passarinho_ovo {
+  width: 38px;
+  height: 62px;
+  top: 1768px;
+  left: 1552px;
+}
+
+#passarinho_ovo .corpinho {
+  background-image: url("../img/passarinho_ovo.png");
+  width: 38px;
+  height: 62px;
+}
+
+#ave1 {
+  top: 1013px;
+  left: 355px;
+}
+#ave2 {
+  top: 1349px;
+  left: 776px;
+}
+#ave3 {
+  top: 1587px;
+  left: 1261px;
+}
+#ave4 {
+  top: 2204px;
+  left: 828px;
+}
+#ave5 {
+  top: 2204px;
+  left: 875px;
+}
+#ave6 {
+  top: 2300px;
+  left: 3305px;
+}
+#ave7 {
+  transform: rotateY(180deg);
+  top: 2530px;
+  left: 2973px;
+}
+#ave8 {
+  top: 2266px;
+  left: 1845px;
+}
+#ave9 {
+  top: 3051px;
+  left: 1304px;
+}
+#ave10 {
+  top: 1290px;
+  left: 875px;
+}
+#ave11 {
+  top: 2006px;
+  left: 694px;
+}
+#ave12 {
+  top: 945px;
+  left: 646px;
+}
+#ave13 {
+  top: 945px;
+  left: 695px;
+}
+#ave14 {
+  top: 477px;
+  left: 1409px;
+}
+#ave15 {
+  top: 1303px;
+  left: 1600px;
+}
+#ave16 {
+  top: 1861px;
+  left: 922px;
+}
+#ave17 {
+  top: 2111px;
+  left: 1074px;
+}
+#ave18 {
+  top: 2091px;
+  left: 1442px;
+}
+#ave19 {
+  top: 2243px;
+  left: 1110px;
+}
+#ave20 {
+  top: 2438px;
+  left: 1044px;
+}
+#ave21 {
+  top: 2690px;
+  left: 1518px;
+}
+#ave22 {
+  top: 3027px;
+  left: 1378px;
+}
+#ave23 {
+  top: 3097px;
+  left: 1438px;
+}
+#ave24 {
+  top: 2180px;
+  left: 2033px;
+}
+#ave25 {
+  top: 2120px;
+  left: 2080px;
+}
+#ave26 {
+  top: 491px;
+  left: 852px;
+}
+#splash {
+  top: 551px;
+  left: 922px;
+  transform: rotate(-5deg);
+}
+#ave27 {
+  top: 850px;
+  left: 1976px;
+}
+#ave28 {
+  top: 536px;
+  left: 1534px;
+}
+#ave29 {
+  top: 536px;
+  left: 1585px;
+}
+
+.casca_top {
+  background-image: url("../img/cascadeovo_cabeca.png");
+  height: 29px;
+  width: 36px;
+  top: -3px;
+  left: 6px;
+}
+#ave10 .casca_top {
+  left: 2px;
+}
+.casca_corpo {
+  background-image: url("../img/cascadeovo_corpo.png");
+  height: 30px;
+  width: 41px;
+  top: 35px;
+  left: -2px;
+}
+
+#passarinho_ovo_1 {
+  background-image: url("../img/passarinho_ovo.png");
+  width: 38px;
+  height: 62px;
+  top: 1768px;
+  left: 1552px;
+}
+#passarinho_ovo_2 {
+  background-image: url("../img/passarinho_ovo_2.png");
+  width: 38px;
+  height: 62px;
+  top: 2190px;
+  left: 532px;
+}
+
+.coracao {
+  opacity: 0;
+  height: 22px;
+  width: 22px;
+}
+
+#coracao_rosa {
+  background-image: url("../img/coracao.png");
+  top: 2194px;
+  left: 862px;
+}
+
+#coracao_cinza {
+  background-image: url("../img/coracao_cinza.png");
+  top: 932px;
+  left: 679px;
+}
+
+#coracao_laranja {
+  background-image: url("../img/coracao_laranja.png");
+  top: 522px;
+  left: 1571px;
+}
+
+#celeiro {
+  background-image: url("../img/celeiro.png");
+  height: 340px;
+  width: 368px;
+  top: 1564px;
+  left: 1100px;
+}
+#celeiro .janela {
+  height: 31px;
+  width: 23px;
+  background-color: yellow;
+}
+#celeiro .janela:nth-of-type(1) {
+  top: 166px;
+  left: 135px;
+}
+#celeiro .janela:nth-of-type(2) {
+  top: 260px;
+  left: 252px;
+}
+#celeiro .janela:nth-of-type(3) {
+  top: 260px;
+  left: 314px;
+}
+#trator {
+  height: 192px;
+  width: 432px;
+  top: 1834px;
+  left: 967px;
+}
+#trator .conjunto {
+  background-image: url("../img/trator_conjunto.png");
+  height: 161px;
+  width: 432px;
+  top: 0px;
+  left: 0px;
+}
+#trator #tratorRoda1 {
+  background-image: url("../img/trator_roda.png");
+  height: 60px;
+  width: 60px;
+  top: 130px;
+  left: 1px;
+}
+#trator #tratorRoda2 {
+  background-image: url("../img/trator_roda.png");
+  height: 93px;
+  width: 93px;
+  top: 97px;
+  left: 117px;
+}
+#trator #tratorRoda3 {
+  background-image: url("../img/trator_roda.png");
+  height: 46px;
+  width: 46px;
+  top: 144px;
+  left: 250px;
+}
+#trator #tratorRoda4 {
+  background-image: url("../img/trator_roda.png");
+  height: 46px;
+  width: 46px;
+  top: 144px;
+  left: 360px;
+}
+#trator .coelhinho {
+  background-image: url("../img/trator_coelho_clandestino.png");
+  height: 64px;
+  width: 50px;
+  top: 14px;
+  left: 327px;
+}
+.pinheiro {
+  width: 115px;
+  height: 128px;
+}
+.pinheiro.azul {
+  background-image: url("../img/pinheiro_azul.png");
+}
+.pinheiro.indigo {
+  background-image: url("../img/pinheiro_indigo.png");
+}
+.pinheiro.lilas {
+  background-image: url("../img/pinheiro_lilas.png");
+}
+.pinheiro.amarelo {
+  background-image: url("../img/pinheiro_amarelo.png");
+}
+.pinheiro.verde {
+  background-image: url("../img/pinheiro_verde.png");
+}
+.pinheiro.verde_claro {
+  background-image: url("../img/pinheiro_verde_claro.png");
+}
+.pinheiro.verde_escuro {
+  background-image: url("../img/pinheiro_verde_escuro.png");
+}
+#pinheiro1 {
+  top: 298px;
+  left: 1015px;
+  width: 75px;
+}
+#pinheiro2 {
+  top: 331px;
+  left: 1056px;
+  height: 136px;
+  width: 79px;
+}
+#pinheiro3 {
+  top: 495px;
+  left: 461px;
+  height: 150px;
+}
+#pinheiro4 {
+  top: 600px;
+  left: 537px;
+  height: 154px;
+}
+#pinheiro5 {
+  top: 552px;
+  left: 964px;
+  height: 158px;
+}
+#pinheiro6 {
+  top: 560px;
+  left: 1221px;
+  height: 117px;
+}
+#pinheiro7 {
+  top: 561px;
+  left: 1417px;
+  height: 132px;
+}
+#pinheiro8 {
+  top: 618px;
+  left: 1368px;
+  height: 158px;
+}
+#pinheiro9 {
+  top: 642px;
+  left: 1139px;
+  height: 161px;
+}
+#pinheiro10 {
+  top: 803px;
+  left: 454px;
+  height: 151px;
+}
+#pinheiro11 {
+  top: 807px;
+  left: 1042px;
+  height: 117px;
+}
+#pinheiro12 {
+  top: 835px;
+  left: 375px;
+  height: 186px;
+}
+#pinheiro13 {
+  top: 911px;
+  left: 717px;
+  height: 117px;
+}
+#pinheiro14 {
+  top: 942px;
+  left: 791px;
+  height: 165px;
+}
+#pinheiro15 {
+  top: 886px;
+  left: 1432px;
+}
+#pinheiro16 {
+  top: 1138px;
+  left: 1250px;
+}
+#pinheiro17 {
+  top: 1197px;
+  left: 1342px;
+  height: 187px;
+}
+#pinheiro18 {
+  top: 1198px;
+  left: 268px;
+  height: 188px;
+}
+#pinheiro19 {
+  top: 2207px;
+  left: 1781px;
+  height: 141px;
+}
+#pinheiro20 {
+  top: 2230px;
+  left: 1683px;
+  height: 169px;
+}
+#pinheiro21 {
+  top: 3066px;
+  left: 1549px;
+  height: 149px;
+}
+#pinheiro22 {
+  top: 1904px;
+  left: 2466px;
+}
+#pinheiro23 {
+  top: 2106px;
+  left: 2150px;
+  height: 158px;
+}
+#pinheiro24 {
+  top: 2177px;
+  left: 2092px;
+}
+
+.ovo {
+  background-image: url("../img/ovo_1.png");
+  width: 30px;
+  height: 30px;
+  position: absolute;
+}
+.ovo:nth-of-type(1) {
+  background-image: url("../img/ovo_1.png");
+}
+.ovo:nth-of-type(2) {
+  background-image: url("../img/ovo_2.png");
+}
+.ovo:nth-of-type(3) {
+  background-image: url("../img/ovo_3.png");
+}
+.ovo:nth-of-type(4) {
+  background-image: url("../img/ovo_4.png");
+}
+.ovo:nth-of-type(5) {
+  background-image: url("../img/ovo_5.png");
+}
+.ovo:nth-of-type(6) {
+  background-image: url("../img/ovo_6.png");
+}
+.ovo:nth-of-type(7) {
+  background-image: url("../img/ovo_7.png");
+}
+.ovo:nth-of-type(8) {
+  background-image: url("../img/ovo_8.png");
+}
+.ovo:nth-of-type(9) {
+  background-image: url("../img/ovo_9.png");
+}
+.ovo:nth-of-type(10) {
+  background-image: url("../img/ovo_10.png");
+}
+.ovo:nth-of-type(11) {
+  background-image: url("../img/ovo_11.png");
+}
+.ovo:nth-of-type(12) {
+  background-image: url("../img/ovo_12.png");
+}
+#ovo1 {
+  background-image: url("../img/ovo_3.png");
+  top: 354px;
+  left: 1168px;
+}
+#ovo2 {
+  background-image: url("../img/ovo_5.png");
+  top: 358px;
+  left: 1193px;
+}
+#ovo3 {
+  background-image: url("../img/ovo_2.png");
+  top: 641px;
+  left: 470px;
+}
+#ovo4 {
+  background-image: url("../img/ovo_1.png");
+  top: 739px;
+  left: 591px;
+}
+#ovo5 {
+  background-image: url("../img/ovo_9.png");
+  top: 840px;
+  left: 1424px;
+}
+#ovo6 {
+  top: 840px;
+  left: 1446px;
+  background-image: url("../img/ovo_10.png");
+}
+#ovo7 {
+  background-image: url("../img/ovo_6.png");
+  top: 863px;
+  left: 847px;
+}
+#ovo8 {
+  background-image: url("../img/ovo_7.png");
+  top: 968px;
+  left: 1083px;
+}
+#ovo9 {
+  background-image: url("../img/ovo_6.png");
+  top: 963px;
+  left: 1097px;
+}
+#ovo10 {
+  background-image: url("../img/ovo_9.png");
+  top: 986px;
+  left: 1138px;
+}
+#ovo11 {
+  background-image: url("../img/ovo_6.png");
+  top: 1480px;
+  left: 662px;
+}
+#ovo12 {
+  background-image: url("../img/ovo_2.png");
+  top: 1485px;
+  left: 696px;
+}
+#ovo13 {
+  background-image: url("../img/ovo_12.png");
+  top: 1680px;
+  left: 332px;
+}
+#ovo14 {
+  background-image: url("../img/ovo_4.png");
+  top: 1682px;
+  left: 354px;
+}
+#ovo15 {
+  background-image: url("../img/ovo_11.png");
+  top: 1711px;
+  left: 546px;
+}
+#ovo16 {
+  background-image: url("../img/ovo_4.png");
+  top: 1887px;
+  left: 1447px;
+}
+#ovo17 {
+  background-image: url("../img/ovo_11.png");
+  top: 1878px;
+  left: 1469px;
+}
+#ovo18 {
+  background-image: url("../img/ovo_4.png");
+  top: 2286px;
+  left: 1211px;
+}
+#ovo19 {
+  background-image: url("../img/ovo_12.png");
+  top: 2284px;
+  left: 1226px;
+}
+#ovo20 {
+  background-image: url("../img/ovo_8.png");
+  top: 2300px;
+  left: 1282px;
+}
+
+#ovo21 {
+  background-image: url("../img/ovo_13.png");
+  top: 2589px;
+  left: 2619px;
+}
+
+#ovo22 {
+  background-image: url("../img/ovo_14.png");
+  top: 2589px;
+  left: 2602px;
+}
+
+#ovo23 {
+  background-image: url("../img/ovo_24.png");
+  top: 2152px;
+  left: 1354px;
+}
+
+#ovo24 {
+  background-image: url("../img/ovo_25.png");
+  top: 2154px;
+  left: 1373px;
+}
+
+#ovo25 {
+  background-image: url("../img/ovo_27.png");
+  top: 2167px;
+  left: 1294px;
+}
+
+#ovo26 {
+  background-image: url("../img/ovo_21.png");
+  top: 2459px;
+  left: 1752px;
+}
+
+#ovo27 {
+  background-image: url("../img/ovo_26.png");
+  top: 2463px;
+  left: 1730px;
+}
+
+#ovo28 {
+  background-image: url("../img/ovo_20.png");
+  top: 2730px;
+  left: 1917px;
+}
+
+#ovo29 {
+  background-image: url("../img/ovo_23.png");
+  top: 2727px;
+  left: 1895px;
+}
+
+#ovo30 {
+  background-image: url("../img/ovo_22.png");
+  top: 2872px;
+  left: 1807px;
+}
+
+#ovo31 {
+  background-image: url("../img/ovo_15.png");
+  top: 1270px;
+  left: 811px;
+}
+#ovo32 {
+  background-image: url("../img/ovo_16.png");
+  top: 1270px;
+  left: 792px;
+}
+#ovo33 {
+  background-image: url("../img/ovo_16.png");
+  top: 1295px;
+  left: 1023px;
+}
+#ovo34 {
+  background-image: url("../img/ovo_18.png");
+  top: 1543px;
+  left: 1079px;
+}
+#ovo35 {
+  background-image: url("../img/ovo_17.png");
+  top: 1550px;
+  left: 1062px;
+}
+#ovo36 {
+  background-image: url("../img/ovo_19.png");
+  top: 2127px;
+  left: 766px;
+}
+#ovo37 {
+  background-image: url("../img/ovo_28.png");
+  top: 610px;
+  left: 766px;
+}
+#ovo38 {
+  background-image: url("../img/ovo_28.png");
+  top: 690px;
+  left: 1569px;
+}
+#ovo39 {
+  background-image: url("../img/ovo_30.png");
+  top: 610px;
+  left: 788px;
+}
+#ovo40 {
+  background-image: url("../img/ovo_30.png");
+  top: 690px;
+  left: 1589px;
+}
+#ovo41 {
+  background-image: url("../img/ovo_31.png");
+  top: 624px;
+  left: 862px;
+}
+#ovo42 {
+  background-image: url("../img/ovo_29.png");
+  top: 359px;
+  left: 1330px;
+}
+#ovo43 {
+  background-image: url("../img/ovo_32.png");
+  top: 970px;
+  left: 1089px;
+}
+#ovo44 {
+  background-image: url("../img/ovo_35.png");
+  top: 1079px;
+  left: 2031px;
+}
+#ovo45 {
+  background-image: url("../img/ovo_34.png");
+  top: 1079px;
+  left: 2050px;
+}
+#ovo46 {
+  background-image: url("../img/ovo_33.png");
+  top: 1429px;
+  left: 1869px;
+}
+#ovo47 {
+  background-image: url("../img/ovo_47.png");
+  top: 1489px;
+  left: 610px;
+}
+#ovo48 {
+  background-image: url("../img/ovo_47.png");
+  top: 1803px;
+  left: 928px;
+}
+#ovo49 {
+  background-image: url("../img/ovo_48.png");
+  top: 1820px;
+  left: 955px;
+}
+#ovo50 {
+  background-image: url("../img/ovo_49.png");
+  top: 1685px;
+  left: 1120px;
+}
+#ovo51 {
+  background-image: url("../img/ovo_49.png");
+  top: 1276px;
+  left: 1331px;
+}
+#ovo52 {
+  background-image: url("../img/ovo_50.png");
+  top: 1278px;
+  left: 1308px;
+}
+#ovo53 {
+  background-image: url("../img/ovo_37.png");
+  top: 1991px;
+  left: 1306px;
+}
+#ovo54 {
+  background-image: url("../img/ovo_39.png");
+  top: 2171px;
+  left: 1393px;
+}
+#ovo55 {
+  background-image: url("../img/ovo_38.png");
+  top: 2173px;
+  left: 1371px;
+}
+#ovo56 {
+  background-image: url("../img/ovo_41.png");
+  top: 2214px;
+  left: 1481px;
+}
+#ovo57 {
+  background-image: url("../img/ovo_40.png");
+  top: 2178px;
+  left: 1751px;
+}
+#ovo58 {
+  background-image: url("../img/ovo_37.png");
+  top: 2122px;
+  left: 606px;
+}
+#ovo59 {
+  background-image: url("../img/ovo_36.png");
+  top: 2226px;
+  left: 465px;
+}
+#ovo60 {
+  background-image: url("../img/ovo_60.png");
+  top: 3139px;
+  left: 1525px;
+}
+#ovo61 {
+  background-image: url("../img/ovo_59.png");
+  top: 3139px;
+  left: 1504px;
+}
+#ovo62 {
+  background-image: url("../img/ovo_63.png");
+  top: 2772px;
+  left: 1711px;
+}
+#ovo63 {
+  background-image: url("../img/ovo_62.png");
+  top: 2772px;
+  left: 1691px;
+}
+#ovo64 {
+  background-image: url("../img/ovo_61.png");
+  top: 2533px;
+  left: 1442px;
+}
+#ovo65 {
+  background-image: url("../img/ovo_63.png");
+  top: 2535px;
+  left: 1384px;
+}
+#ovo66 {
+  background-image: url("../img/ovo_61.png");
+  top: 2364px;
+  left: 1815px;
+}
+#ovo67 {
+  background-image: url("../img/ovo_63.png");
+  top: 2836px;
+  left: 1107px;
+}
+#ovo68 {
+  background-image: url("../img/ovo_44.png");
+  top: 1974px;
+  left: 2385px;
+}
+#ovo69 {
+  background-image: url("../img/ovo_45.png");
+  top: 2006px;
+  left: 2419px;
+}
+#ovo70 {
+  background-image: url("../img/ovo_46.png");
+  top: 2008px;
+  left: 2441px;
+}
+#ovo71 {
+  background-image: url("../img/ovo_42.png");
+  top: 1374px;
+  left: 1844px;
+}
+#ovo72 {
+  background-image: url("../img/ovo_43.png");
+  top: 1379px;
+  left: 1861px;
+}
+#ovo73 {
+  background-image: url("../img/ovo_56.png");
+  top: 888px;
+  left: 467px;
+}
+#ovo74 {
+  background-image: url("../img/ovo_53.png");
+  top: 538px;
+  left: 657px;
+}
+#ovo75 {
+  background-image: url("../img/ovo_58.png");
+  top: 754px;
+  left: 881px;
+}
+#ovo76 {
+  background-image: url("../img/ovo_52.png");
+  top: 726px;
+  left: 941px;
+}
+#ovo77 {
+  background-image: url("../img/ovo_55.png");
+  top: 726px;
+  left: 921px;
+}
+#ovo78 {
+  background-image: url("../img/ovo_51.png");
+  top: 790px;
+  left: 1661px;
+}
+#ovo79 {
+  background-image: url("../img/ovo_53.png");
+  top: 799px;
+  left: 1701px;
+}
+#ovo80 {
+  background-image: url("../img/ovo_58.png");
+  top: 464px;
+  left: 1886px;
+}
+#ovo81 {
+  background-image: url("../img/ovo_57.png");
+  top: 464px;
+  left: 1861px;
+}
+
+.disco {
+  width: 216px;
+  height: 387px;
+  top: 1460px;
+  left: 717px;
+}
+.ovni {
+  background-image: url("../img/disco.png");
+  width: 216px;
+  height: 148px;
+}
+.player {
+  position: absolute;
+}
+.disco .luz {
+  background-image: url("../img/disco_luz.png");
+  width: 216px;
+  height: 78px;
+  top: 70px;
+}
+.disco .sombra {
+  width: 85px;
+  height: 30px;
+  top: 333px;
+  left: 66px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: rgba(160, 180, 0, 0.7);
+}
+.disco .farol {
+  width: 18px;
+  height: 18px;
+  top: 88px;
+  left: 62px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #d7ff57;
+  box-shadow: 0 0 20px #d7ff57;
+}
+.disco #f2 {
+  left: 99px;
+}
+.disco #f3 {
+  left: 136px;
+}
+.ovelha {
+  width: 70px;
+  height: 55px;
+  top: 1710px;
+  left: 792px;
+}
+.ovelha .pata {
+  background-color: #36322e;
+  width: 4px;
+  height: 26px;
+}
+.ovelha .pata.dianteira {
+  top: 30px;
+  left: 48px;
+}
+.ovelha .pata.traseira {
+  top: 30px;
+  left: 13px;
+}
+.ovelha .corpo {
+  background-image: url("../img/ovelha_corpo_branco.png");
+  width: 57px;
+  height: 44px;
+  top: 4px;
+  left: 2px;
+}
+.ovelha .cabeca {
+  background-image: url("../img/ovelha_cabeca.png");
+  width: 28px;
+  height: 31px;
+  top: 4px;
+  left: 42px;
+}
+.ovelha#abduzida {
+  top: 1760px;
+}
+.coelho {
+  width: 70px;
+  height: 86px;
+  top: 674px;
+  left: 916px;
+}
+.coelho .sentado .corpo {
+  background-image: url("../img/coelho_azul_corpo.png");
+  height: 61px;
+  width: 50px;
+  top: 25px;
+  left: 0px;
+}
+.coelho .sentado .olhos {
+  background-image: url("../img/coelho_azul_olhos.png");
+  height: 8px;
+  width: 52px;
+  top: 39px;
+  left: -1px;
+}
+.coelho .sentado .orelha.esquerda {
+  background-image: url("../img/coelho_azul_orelha_esquerda.png");
+  height: 37px;
+  width: 21px;
+  top: 0px;
+  left: 5px;
+}
+.coelho .sentado .orelha.direita {
+  background-image: url("../img/coelho_azul_orelha_direita.png");
+  height: 37px;
+  width: 21px;
+  top: 0px;
+  left: 23px;
+}
+.coelho .sentado .pernas {
+  background-image: url("../img/coelho_azul_pernas.png");
+  height: 33px;
+  width: 50px;
+  top: 52px;
+  left: -2px;
+}
+
+.coelho.cinza .corpo {
+  background-image: url("../img/coelho_cinza_corpo.png");
+}
+.coelho.cinza .olhos {
+  background-image: url("../img/coelho_cinza_olhos.png");
+}
+.coelho.cinza .orelha.esquerda {
+  background-image: url("../img/coelho_cinza_orelha_esquerda.png");
+}
+.coelho.cinza .orelha.direita {
+  background-image: url("../img/coelho_cinza_orelha_direita.png");
+}
+.coelho.cinza .pernas {
+  background-image: url("../img/coelho_cinza_pernas.png");
+}
+
+.coelho.lilas .corpo {
+  background-image: url("../img/coelho_lilas_corpo.png");
+}
+.coelho.lilas .olhos {
+  background-image: url("../img/coelho_lilas_olhos.png");
+}
+.coelho.lilas .orelha.esquerda {
+  background-image: url("../img/coelho_lilas_orelha_esquerda.png");
+}
+.coelho.lilas .orelha.direita {
+  background-image: url("../img/coelho_lilas_orelha_direita.png");
+}
+.coelho.lilas .pernas {
+  background-image: url("../img/coelho_lilas_pernas.png");
+}
+
+.coelho.verde .corpo {
+  background-image: url("../img/coelho_verde_corpo.png");
+}
+.coelho.verde .olhos {
+  background-image: url("../img/coelho_verde_olhos.png");
+}
+.coelho.verde .orelha.esquerda {
+  background-image: url("../img/coelho_verde_orelha_esquerda.png");
+}
+.coelho.verde .orelha.direita {
+  background-image: url("../img/coelho_verde_orelha_direita.png");
+}
+.coelho.verde .pernas {
+  background-image: url("../img/coelho_verde_pernas.png");
+}
+
+.coelho.tipo1 .corpo {
+  background-image: url("../img/coelho_1_corpo.png");
+}
+.coelho.tipo1 .orelha.esquerda {
+  background-image: url("../img/coelho_1_orelha_esquerda.png");
+}
+.coelho.tipo1 .orelha.direita {
+  background-image: url("../img/coelho_1_orelha_direita.png");
+}
+.coelho.tipo1 .pernas {
+  background-image: url("../img/coelho_1_pernas.png");
+}
+
+.coelho.tipo2 .corpo {
+  background-image: url("../img/coelho_2_corpo.png");
+}
+.coelho.tipo2 .orelha.esquerda {
+  background-image: url("../img/coelho_2_orelha_esquerda.png");
+}
+.coelho.tipo2 .orelha.direita {
+  background-image: url("../img/coelho_2_orelha_direita.png");
+}
+.coelho.tipo2 .pernas {
+  background-image: url("../img/coelho_2_pernas.png");
+}
+
+.coelho.tipo3 .corpo {
+  background-image: url("../img/coelho_3_corpo.png");
+}
+.coelho.tipo3 .orelha.esquerda {
+  background-image: url("../img/coelho_3_orelha_esquerda.png");
+}
+.coelho.tipo3 .orelha.direita {
+  background-image: url("../img/coelho_3_orelha_direita.png");
+}
+.coelho.tipo3 .pernas {
+  background-image: url("../img/coelho_3_pernas.png");
+}
+
+.coelho.tipo4 .corpo {
+  background-image: url("../img/coelho_4_corpo.png");
+}
+.coelho.tipo4 .orelha.esquerda {
+  background-image: url("../img/coelho_4_orelha_esquerda.png");
+}
+.coelho.tipo4 .orelha.direita {
+  background-image: url("../img/coelho_4_orelha_direita.png");
+}
+.coelho.tipo4 .pernas {
+  background-image: url("../img/coelho_4_pernas.png");
+}
+
+.coelho.tipo5 .corpo {
+  background-image: url("../img/coelho_5_corpo.png");
+}
+.coelho.tipo5 .orelha.esquerda {
+  background-image: url("../img/coelho_5_orelha_esquerda.png");
+}
+.coelho.tipo5 .orelha.direita {
+  background-image: url("../img/coelho_5_orelha_direita.png");
+}
+.coelho.tipo5 .pernas {
+  background-image: url("../img/coelho_5_pernas.png");
+}
+
+.coelho.tipo6 .corpo {
+  background-image: url("../img/coelho_6_corpo.png");
+}
+.coelho.tipo6 .orelha.esquerda {
+  background-image: url("../img/coelho_6_orelha_esquerda.png");
+}
+.coelho.tipo6 .orelha.direita {
+  background-image: url("../img/coelho_6_orelha_direita.png");
+}
+.coelho.tipo6 .pernas {
+  background-image: url("../img/coelho_6_pernas.png");
+}
+
+.coelho.tipo7 .corpo {
+  background-image: url("../img/coelho_7_corpo.png");
+}
+.coelho.tipo7 .orelha.esquerda {
+  background-image: url("../img/coelho_7_orelha_esquerda.png");
+}
+.coelho.tipo7 .orelha.direita {
+  background-image: url("../img/coelho_7_orelha_direita.png");
+}
+.coelho.tipo7 .pernas {
+  background-image: url("../img/coelho_7_pernas.png");
+}
+
+.coelho.tipo8 .corpo {
+  background-image: url("../img/coelho_8_corpo.png");
+}
+.coelho.tipo8 .orelha.esquerda {
+  background-image: url("../img/coelho_8_orelha_esquerda.png");
+}
+.coelho.tipo8 .orelha.direita {
+  background-image: url("../img/coelho_8_orelha_direita.png");
+}
+.coelho.tipo8 .pernas {
+  background-image: url("../img/coelho_8_pernas.png");
+}
+
+.coelho.tipo9 .corpo {
+  background-image: url("../img/coelho_9_corpo.png");
+}
+.coelho.tipo9 .orelha.esquerda {
+  background-image: url("../img/coelho_9_orelha_esquerda.png");
+}
+.coelho.tipo9 .orelha.direita {
+  background-image: url("../img/coelho_9_orelha_direita.png");
+}
+.coelho.tipo9 .pernas {
+  background-image: url("../img/coelho_9_pernas.png");
+}
+
+.coelho.tipo10 .corpo {
+  background-image: url("../img/coelho_10_corpo.png");
+}
+.coelho.tipo10 .orelha.esquerda {
+  background-image: url("../img/coelho_10_orelha_esquerda.png");
+}
+.coelho.tipo10 .orelha.direita {
+  background-image: url("../img/coelho_10_orelha_direita.png");
+}
+.coelho.tipo10 .pernas {
+  background-image: url("../img/coelho_10_pernas.png");
+}
+
+.coelho.tipo11 .corpo {
+  background-image: url("../img/coelho_11_corpo.png");
+}
+.coelho.tipo11 .orelha.esquerda {
+  background-image: url("../img/coelho_11_orelha_esquerda.png");
+}
+.coelho.tipo11 .orelha.direita {
+  background-image: url("../img/coelho_11_orelha_direita.png");
+}
+.coelho.tipo11 .pernas {
+  background-image: url("../img/coelho_11_pernas.png");
+}
+
+.coelho.tipo12 .corpo {
+  background-image: url("../img/coelho_12_corpo.png");
+}
+.coelho.tipo12 .orelha.esquerda {
+  background-image: url("../img/coelho_12_orelha_esquerda.png");
+}
+.coelho.tipo12 .orelha.direita {
+  background-image: url("../img/coelho_12_orelha_direita.png");
+}
+.coelho.tipo12 .pernas {
+  background-image: url("../img/coelho_12_pernas.png");
+}
+
+.coelho.tipo13 .corpo {
+  background-image: url("../img/coelho_13_corpo.png");
+}
+.coelho.tipo13 .orelha.esquerda {
+  background-image: url("../img/coelho_13_orelha_esquerda.png");
+}
+.coelho.tipo13 .orelha.direita {
+  background-image: url("../img/coelho_13_orelha_direita.png");
+}
+.coelho.tipo13 .pernas {
+  background-image: url("../img/coelho_13_pernas.png");
+}
+
+.coelho.tipo14 .corpo {
+  background-image: url("../img/coelho_14_corpo.png");
+}
+.coelho.tipo14 .orelha.esquerda {
+  background-image: url("../img/coelho_14_orelha_esquerda.png");
+}
+.coelho.tipo14 .orelha.direita {
+  background-image: url("../img/coelho_14_orelha_direita.png");
+}
+.coelho.tipo14 .pernas {
+  background-image: url("../img/coelho_14_pernas.png");
+}
+
+.coelho.tipo15 .corpo {
+  background-image: url("../img/coelho_15_corpo.png");
+}
+.coelho.tipo15 .orelha.esquerda {
+  background-image: url("../img/coelho_15_orelha_esquerda.png");
+}
+.coelho.tipo15 .orelha.direita {
+  background-image: url("../img/coelho_15_orelha_direita.png");
+}
+.coelho.tipo15 .pernas {
+  background-image: url("../img/coelho_15_pernas.png");
+}
+
+.coelho.tipo16 .corpo {
+  background-image: url("../img/coelho_16_corpo.png");
+}
+.coelho.tipo16 .orelha.esquerda {
+  background-image: url("../img/coelho_16_orelha_esquerda.png");
+}
+.coelho.tipo16 .orelha.direita {
+  background-image: url("../img/coelho_16_orelha_direita.png");
+}
+.coelho.tipo16 .pernas {
+  background-image: url("../img/coelho_16_pernas.png");
+}
+
+.coelho.tipo17 .corpo {
+  background-image: url("../img/coelho_17_corpo.png");
+}
+.coelho.tipo17 .orelha.esquerda {
+  background-image: url("../img/coelho_17_orelha_esquerda.png");
+}
+.coelho.tipo17 .orelha.direita {
+  background-image: url("../img/coelho_17_orelha_direita.png");
+}
+.coelho.tipo17 .pernas {
+  background-image: url("../img/coelho_17_pernas.png");
+}
+
+.coelho.tipo18 .corpo {
+  background-image: url("../img/coelho_18_corpo.png");
+}
+.coelho.tipo18 .orelha.esquerda {
+  background-image: url("../img/coelho_18_orelha_esquerda.png");
+}
+.coelho.tipo18 .orelha.direita {
+  background-image: url("../img/coelho_18_orelha_direita.png");
+}
+.coelho.tipo18 .pernas {
+  background-image: url("../img/coelho_18_pernas.png");
+}
+
+.coelho.tipo19 .corpo {
+  background-image: url("../img/coelho_19_corpo.png");
+}
+.coelho.tipo19 .orelha.esquerda {
+  background-image: url("../img/coelho_19_orelha_esquerda.png");
+}
+.coelho.tipo19 .orelha.direita {
+  background-image: url("../img/coelho_19_orelha_direita.png");
+}
+.coelho.tipo19 .pernas {
+  background-image: url("../img/coelho_19_pernas.png");
+}
+
+.coelho.tipo20 .corpo {
+  background-image: url("../img/coelho_20_corpo.png");
+}
+.coelho.tipo20 .orelha.esquerda {
+  background-image: url("../img/coelho_20_orelha_esquerda.png");
+}
+.coelho.tipo20 .orelha.direita {
+  background-image: url("../img/coelho_20_orelha_direita.png");
+}
+.coelho.tipo20 .pernas {
+  background-image: url("../img/coelho_20_pernas.png");
+}
+
+#coelho0 {
+  top: 460px;
+  left: 1224px;
+}
+#coelho1 {
+  top: 512px;
+  left: 590px;
+}
+#coelhoX {
+  top: 674px;
+  left: 916px;
+}
+#coelho2 {
+  top: 444px;
+  left: 1216px;
+}
+#coelho3 {
+  top: 1304px;
+  left: 1126px;
+}
+#coelho4 {
+  top: 1322px;
+  left: 1061px;
+}
+#coelho5 {
+  top: 1654px;
+  left: 631px;
+}
+#coelho6 {
+  top: 2115px;
+  left: 1085px;
+  transform: rotateY(180deg);
+}
+#coelho7 {
+  top: 2606px;
+  left: 2903px;
+}
+#coelho8 {
+  top: 2248px;
+  left: 2073px;
+}
+#coelho9 {
+  top: 2583px;
+  left: 2843px;
+}
+#coelho10 {
+  top: 2843px;
+  left: 2411px;
+}
+#coelho11 {
+  top: 2282px;
+  left: 1349px;
+}
+#coelho12 {
+  top: 2561px;
+  left: 1750px;
+}
+#coelho13 {
+  top: 2720px;
+  left: 1620px;
+}
+#coelho14 {
+  top: 2758px;
+  left: 1680px;
+}
+#coelho15 {
+  top: 1825px;
+  left: 931px;
+}
+#coelho16 {
+  top: 1205px;
+  left: 1121px;
+}
+#coelho17 {
+  top: 1332px;
+  left: 1180px;
+}
+#coelho18 {
+  top: 256px;
+  left: 1429px;
+}
+#coelho19 {
+  top: 910px;
+  left: 1038px;
+}
+#coelho20 {
+  top: 307px;
+  left: 1097px;
+}
+#coelho21 {
+  top: 1017px;
+  left: 1810px;
+}
+#coelho22 {
+  top: 1427px;
+  left: 2211px;
+}
+#coelho23 {
+  top: 1358px;
+  left: 1409px;
+}
+#coelho24 {
+  top: 1613px;
+  left: 1784px;
+}
+#coelho25 {
+  top: 1159px;
+  left: 1060px;
+}
+#coelho26 {
+  top: 1575px;
+  left: 1234px;
+}
+#coelho27 {
+  top: 1611px;
+  left: 1304px;
+}
+#coelho28 {
+  top: 1932px;
+  left: 1401px;
+}
+#coelho29 {
+  top: 2167px;
+  left: 1624px;
+}
+#coelho30 {
+  top: 2020px;
+  left: 680px;
+}
+#coelho31 {
+  top: 2369px;
+  left: 1643px;
+}
+#coelho32 {
+  top: 2730px;
+  left: 1363px;
+}
+#coelho33 {
+  top: 3232px;
+  left: 1506px;
+}
+#coelho34 {
+  top: 1447px;
+  left: 1830px;
+}
+#coelho35 {
+  top: 1940px;
+  left: 2286px;
+}
+#coelho36 {
+  top: 607px;
+  left: 740px;
+}
+#coelho37 {
+  top: 810px;
+  left: 783px;
+}
+
+.coelho .correndo {
+  height: 106px;
+  width: 80px;
+  top: -10px;
+  left: 0;
+}
+.coelho .correndo .alto {
+  background-image: url("../img/coelho_lilas_correndo_alto.png");
+  height: 114px;
+  width: 80px;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+}
+.coelho .correndo .baixo {
+  background-image: url("../img/coelho_lilas_correndo_baixo.png");
+  height: 114px;
+  width: 76px;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+}
+.coelho.azul .correndo .alto {
+  background-image: url("../img/coelho_azul_correndo_alto.png");
+}
+.coelho.azul .correndo .baixo {
+  background-image: url("../img/coelho_azul_correndo_baixo.png");
+}
+.coelho.cinza .correndo .alto {
+  background-image: url("../img/coelho_cinza_correndo_alto.png");
+}
+.coelho.cinza .correndo .baixo {
+  background-image: url("../img/coelho_cinza_correndo_baixo.png");
+}
+.coelho.verde .correndo .alto {
+  background-image: url("../img/coelho_verde_correndo_alto.png");
+}
+.coelho.verde .correndo .baixo {
+  background-image: url("../img/coelho_verde_correndo_baixo.png");
+}
+.coelho.tipo1 .correndo .alto {
+  background-image: url("../img/coelho_1_correndo_alto.png");
+}
+.coelho.tipo1 .correndo .baixo {
+  background-image: url("../img/coelho_1_correndo_baixo.png");
+}
+.coelho.tipo2 .correndo .alto {
+  background-image: url("../img/coelho_2_correndo_alto.png");
+}
+.coelho.tipo2 .correndo .baixo {
+  background-image: url("../img/coelho_2_correndo_baixo.png");
+}
+.coelho.tipo3 .correndo .alto {
+  background-image: url("../img/coelho_3_correndo_alto.png");
+}
+.coelho.tipo3 .correndo .baixo {
+  background-image: url("../img/coelho_3_correndo_baixo.png");
+}
+.coelho.tipo4 .correndo .alto {
+  background-image: url("../img/coelho_4_correndo_alto.png");
+}
+.coelho.tipo4 .correndo .baixo {
+  background-image: url("../img/coelho_4_correndo_baixo.png");
+}
+.coelho.tipo5 .correndo .alto {
+  background-image: url("../img/coelho_5_correndo_alto.png");
+}
+.coelho.tipo5 .correndo .baixo {
+  background-image: url("../img/coelho_5_correndo_baixo.png");
+}
+.coelho.tipo6 .correndo .alto {
+  background-image: url("../img/coelho_6_correndo_alto.png");
+}
+.coelho.tipo6 .correndo .baixo {
+  background-image: url("../img/coelho_6_correndo_baixo.png");
+}
+.coelho.tipo7 .correndo .alto {
+  background-image: url("../img/coelho_7_correndo_alto.png");
+}
+.coelho.tipo7 .correndo .baixo {
+  background-image: url("../img/coelho_7_correndo_baixo.png");
+}
+.coelho.tipo8 .correndo .alto {
+  background-image: url("../img/coelho_8_correndo_alto.png");
+}
+.coelho.tipo8 .correndo .baixo {
+  background-image: url("../img/coelho_8_correndo_baixo.png");
+}
+.coelho.tipo9 .correndo .alto {
+  background-image: url("../img/coelho_9_correndo_alto.png");
+}
+.coelho.tipo9 .correndo .baixo {
+  background-image: url("../img/coelho_9_correndo_baixo.png");
+}
+.coelho.tipo10 .correndo .alto {
+  background-image: url("../img/coelho_10_correndo_alto.png");
+}
+.coelho.tipo10 .correndo .baixo {
+  background-image: url("../img/coelho_10_correndo_baixo.png");
+}
+.coelho.tipo11 .correndo .alto {
+  background-image: url("../img/coelho_11_correndo_alto.png");
+}
+.coelho.tipo11 .correndo .baixo {
+  background-image: url("../img/coelho_11_correndo_baixo.png");
+}
+.coelho.tipo12 .correndo .alto {
+  background-image: url("../img/coelho_12_correndo_alto.png");
+}
+.coelho.tipo12 .correndo .baixo {
+  background-image: url("../img/coelho_12_correndo_baixo.png");
+}
+.coelho.tipo13 .correndo .alto {
+  background-image: url("../img/coelho_13_correndo_alto.png");
+}
+.coelho.tipo13 .correndo .baixo {
+  background-image: url("../img/coelho_13_correndo_baixo.png");
+}
+.coelho.tipo14 .correndo .alto {
+  background-image: url("../img/coelho_14_correndo_alto.png");
+}
+.coelho.tipo14 .correndo .baixo {
+  background-image: url("../img/coelho_14_correndo_baixo.png");
+}
+.coelho.tipo15 .correndo .alto {
+  background-image: url("../img/coelho_15_correndo_alto.png");
+}
+.coelho.tipo15 .correndo .baixo {
+  background-image: url("../img/coelho_15_correndo_baixo.png");
+}
+.coelho.tipo16 .correndo .alto {
+  background-image: url("../img/coelho_16_correndo_alto.png");
+}
+.coelho.tipo16 .correndo .baixo {
+  background-image: url("../img/coelho_16_correndo_baixo.png");
+}
+.coelho.tipo17 .correndo .alto {
+  background-image: url("../img/coelho_17_correndo_alto.png");
+}
+.coelho.tipo17 .correndo .baixo {
+  background-image: url("../img/coelho_17_correndo_baixo.png");
+}
+.coelho.tipo18 .correndo .alto {
+  background-image: url("../img/coelho_18_correndo_alto.png");
+}
+.coelho.tipo18 .correndo .baixo {
+  background-image: url("../img/coelho_18_correndo_baixo.png");
+}
+.coelho.tipo19 .correndo .alto {
+  background-image: url("../img/coelho_19_correndo_alto.png");
+}
+.coelho.tipo19 .correndo .baixo {
+  background-image: url("../img/coelho_19_correndo_baixo.png");
+}
+.coelho.tipo20 .correndo .alto {
+  background-image: url("../img/coelho_20_correndo_alto.png");
+}
+.coelho.tipo20 .correndo .baixo {
+  background-image: url("../img/coelho_20_correndo_baixo.png");
+}
+
+#coelho12 .correndo .alto,
+#coelho12 .correndo .baixo {
+  top: 30px;
+}
+
+.balao {
+  background-image: url("../img/balao.png");
+  height: 329px;
+  width: 192px;
+  top: 519px;
+  left: 702px;
+}
+
+.balao_oceano .sombra {
+  background-image: url("../img/balao_oceano_sombra.png");
+  width: 85px;
+  height: 30px;
+  top: 447px;
+  left: 47px;
+}
+.balao_oceano .coelho {
+  background-image: url("../img/coelho_balao.png");
+  width: 37px;
+  height: 50px;
+  top: 314px;
+  left: 97px;
+}
+#balao_oceano_1 {
+  background-image: url("../img/balao_oceano_1.png");
+  width: 168px;
+  height: 286px;
+  top: 1664px;
+  left: 2704px;
+}
+#balao_oceano_2 {
+  background-image: url("../img/balao_oceano_2.png");
+  width: 228px;
+  height: 388px;
+  top: 1974px;
+  left: 3030px;
+}
+#balao_oceano_2 .sombra {
+  width: 97px;
+  height: 38px;
+  top: 490px;
+  left: 78px;
+}
+
+.carro_cenoura {
+  width: 194px;
+  height: 108px;
+}
+.carro_cenoura .olho {
+  background-image: url("../img/carro_cenoura_olho.png");
+  width: 11px;
+  height: 10px;
+  top: 49px;
+  left: 96px;
+}
+.carro_cenoura .roda {
+  width: 21px;
+  height: 21px;
+  border: 6px solid #000;
+  background-color: #ddd;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  top: 96px;
+}
+.carro_cenoura .roda:nth-of-type(1) {
+  left: 71px;
+}
+.carro_cenoura .roda:nth-of-type(2) {
+  left: 123px;
+}
+
+#carro_cenoura1 {
+  background-image: url("../img/carro_cenoura_conjunto.png");
+  top: 1406px;
+  left: 938px;
+}
+#carro_cenoura2 {
+  background-image: url("../img/carro_cenoura_conjunto_rosa.png");
+  top: 1970px;
+  left: 2567px;
+}
+#carro_cenoura3 {
+  background-image: url("../img/carro_cenoura_conjunto_verde.png");
+  top: 1474px;
+  left: 2064px;
+}
+#carro_cenoura4 {
+  background-image: url("../img/carro_cenoura_conjunto_azul.png");
+  top: 2336px;
+  left: 207px;
+}
+#carro_cenoura5 {
+  background-image: url("../img/carro_cenoura_conjunto_amarelo.png");
+  top: 1514px;
+  left: 1928px;
+}
+#carro_cenoura6 {
+  background-image: url("../img/carro_cenoura_conjunto_marrom.png");
+  top: 1838px;
+  left: 2287px;
+}
+
+.arvore {
+  width: 164px;
+  height: 243px;
+}
+.arvore .copa {
+  background-image: url("../img/arvore_copa_3.png");
+  width: 100%;
+  height: 85%;
+}
+.arvore .tronco {
+  background-image: url("../img/arvore_tronco.png");
+  width: 25%;
+  height: 40%;
+  bottom: 0;
+  left: 62px;
+}
+#arvore1 {
+  width: 144px;
+  height: 211px;
+  top: 1494px;
+  left: 356px;
+}
+#arvore2 {
+  top: 1495px;
+  left: 459px;
+}
+#arvore3 {
+  top: 1331px;
+  left: 1238px;
+}
+#arvore4 {
+  top: 1419px;
+  left: 1395px;
+}
+#arvore5 {
+  width: 149px;
+  height: 216px;
+  top: 1916px;
+  left: 639px;
+}
+#arvore6 {
+  top: 1980px;
+  left: 816px;
+}
+#arvore7 {
+  width: 144px;
+  height: 211px;
+  top: 2131px;
+  left: 1303px;
+}
+#arvore8 {
+  width: 182px;
+  height: 273px;
+  top: 2114px;
+  left: 2978px;
+}
+#arvore9 {
+  width: 139px;
+  height: 208px;
+  top: 2575px;
+  left: 2136px;
+}
+#arvore10 {
+  width: 157px;
+  height: 236px;
+  top: 2634px;
+  left: 2223px;
+}
+#arvore11 {
+  width: 161px;
+  height: 241px;
+  top: 2316px;
+  left: 3096px;
+}
+#arvore12 {
+  width: 139px;
+  height: 208px;
+  top: 2404px;
+  left: 2593px;
+}
+#arvore13 {
+  width: 139px;
+  height: 208px;
+  top: 2670px;
+  left: 2670px;
+}
+#arvore14 {
+  width: 111px;
+  height: 167px;
+  top: 2452px;
+  left: 3038px;
+}
+#arvore15 {
+  width: 140px;
+  height: 210px;
+  top: 1768px;
+  left: 1256px;
+}
+#arvore16 {
+  width: 161px;
+  height: 241px;
+  top: 2382px;
+  left: 1329px;
+}
+#arvore17 {
+  width: 181px;
+  height: 272px;
+  top: 1790px;
+  left: 1363px;
+}
+#arvore18 {
+  width: 154px;
+  height: 231px;
+  top: 1990px;
+  left: 889px;
+}
+#arvore19 {
+  width: 164px;
+  height: 246px;
+  top: 1008px;
+  left: 715px;
+}
+#arvore20 {
+  width: 164px;
+  height: 246px;
+  top: 1024px;
+  left: 978px;
+}
+#arvore21 {
+  width: 184px;
+  height: 276px;
+  top: 1057px;
+  left: 839px;
+}
+#arvore22 {
+  width: 182px;
+  height: 272px;
+  top: 1912px;
+  left: 774px;
+}
+#arvore23 {
+  width: 161px;
+  height: 241px;
+  top: 222px;
+  left: 839px;
+}
+#arvore24 {
+  width: 161px;
+  height: 241px;
+  top: 149px;
+  left: 1247px;
+}
+#arvore25 {
+  width: 182px;
+  height: 272px;
+  top: 575px;
+  left: 1340px;
+}
+#arvore26 {
+  width: 166px;
+  height: 249px;
+  top: 383px;
+  left: 714px;
+}
+#arvore27 {
+  width: 184px;
+  height: 276px;
+  top: 760px;
+  left: 1117px;
+}
+#arvore28 {
+  width: 168px;
+  height: 252px;
+  top: 33px;
+  left: 1435px;
+}
+#arvore29 {
+  width: 161px;
+  height: 241px;
+  top: 775px;
+  left: 1801px;
+}
+#arvore30 {
+  width: 161px;
+  height: 241px;
+  top: 863px;
+  left: 1902px;
+}
+#arvore31 {
+  width: 182px;
+  height: 272px;
+  top: 1459px;
+  left: 1424px;
+}
+#arvore32 {
+  width: 161px;
+  height: 242px;
+  top: 1548px;
+  left: 1555px;
+}
+#arvore33 {
+  width: 162px;
+  height: 244px;
+  top: 1335px;
+  left: 1921px;
+}
+#arvore34 {
+  width: 169px;
+  height: 253px;
+  top: 1022px;
+  left: 1344px;
+}
+#arvore35 {
+  width: 141px;
+  height: 212px;
+  top: 1351px;
+  left: 1152px;
+}
+#arvore36 {
+  width: 141px;
+  height: 212px;
+  top: 1530px;
+  left: 429px;
+}
+#arvore37 {
+  width: 137px;
+  height: 199px;
+  top: 1036px;
+  left: 1602px;
+}
+#arvore38 {
+  width: 140px;
+  height: 210px;
+  top: 966px;
+  left: 1081px;
+}
+#arvore39 {
+  width: 161px;
+  height: 241px;
+  top: 1472px;
+  left: 1038px;
+}
+#arvore40 {
+  width: 166px;
+  height: 249px;
+  top: 1557px;
+  left: 533px;
+}
+#arvore41 {
+  width: 180px;
+  height: 271px;
+  top: 1741px;
+  left: 1020px;
+}
+#arvore42 {
+  width: 161px;
+  height: 242px;
+  top: 1966px;
+  left: 1700px;
+}
+#arvore43 {
+  width: 170px;
+  height: 256px;
+  top: 1999px;
+  left: 418px;
+}
+#arvore44 {
+  width: 154px;
+  height: 230px;
+  top: 2212px;
+  left: 1212px;
+}
+#arvore45 {
+  width: 161px;
+  height: 241px;
+  top: 2247px;
+  left: 1471px;
+}
+#arvore46 {
+  width: 219px;
+  height: 329px;
+  top: 2229px;
+  left: 1311px;
+}
+#arvore47 {
+  width: 159px;
+  height: 239px;
+  top: 2478px;
+  left: 1162px;
+}
+#arvore48 {
+  width: 161px;
+  height: 241px;
+  top: 2538px;
+  left: 1034px;
+}
+#arvore49 {
+  width: 167px;
+  height: 250px;
+  top: 2908px;
+  left: 1467px;
+}
+#arvore50 {
+  width: 158px;
+  height: 237px;
+  top: 1108px;
+  left: 1770px;
+}
+#arvore51 {
+  width: 161px;
+  height: 241px;
+  top: 1245px;
+  left: 1666px;
+}
+#arvore52 {
+  width: 161px;
+  height: 241px;
+  top: 1343px;
+  left: 2084px;
+}
+#arvore53 {
+  width: 161px;
+  height: 242px;
+  top: 1518px;
+  left: 2130px;
+}
+#arvore54 {
+  width: 161px;
+  height: 241px;
+  top: 1960px;
+  left: 1924px;
+}
+#arvore55 {
+  width: 136px;
+  height: 204px;
+  top: 360px;
+  left: 594px;
+}
+#arvore56 {
+  width: 161px;
+  height: 241px;
+  top: 404px;
+  left: 459px;
+}
+#arvore57 {
+  width: 117px;
+  height: 176px;
+  top: 649px;
+  left: 1002px;
+}
+
+#arvore1 .tronco,
+#arvore7 .tronco {
+  left: 54px;
+}
+#arvore5 .tronco,
+#arvore44 .tronco {
+  left: 56px;
+}
+#arvore8 .tronco,
+#arvore17 .tronco,
+#arvore22 .tronco,
+#arvore31 .tronco,
+#arvore41 .tronco {
+  left: 67px;
+}
+#arvore9 .tronco,
+#arvore12 .tronco,
+#arvore13 .tronco,
+#arvore38 .tronco {
+  left: 52px;
+}
+#arvore10 .tronco,
+#arvore11 .tronco,
+#arvore16 .tronco,
+#arvore45 .tronco,
+#arvore47 .tronco,
+#arvore51 .tronco,
+#arvore52 .tronco,
+#arvore54 .tronco {
+  left: 59px;
+}
+#arvore14 .tronco {
+  left: 41px;
+}
+#arvore15 .tronco,
+#arvore37 .tronco {
+  left: 51px;
+}
+#arvore18 .tronco,
+#arvore50 .tronco {
+  left: 57px;
+}
+#arvore21 .tronco,
+#arvore25 .tronco,
+#arvore27 .tronco {
+  left: 68px;
+}
+#arvore23 .tronco,
+#arvore24 .tronco,
+#arvore29 .tronco,
+#arvore30 .tronco,
+#arvore32 .tronco,
+#arvore33 .tronco,
+#arvore39 .tronco,
+#arvore42 .tronco,
+#arvore48 .tronco,
+#arvore53 .tronco,
+#arvore56 .tronco {
+  left: 60px;
+}
+#arvore34 .tronco,
+#arvore43 .tronco {
+  left: 63px;
+}
+#arvore35 .tronco,
+#arvore36 .tronco {
+  left: 53px;
+}
+#arvore46 .tronco {
+  left: 81px;
+}
+#arvore55 .tronco {
+  left: 49px;
+}
+#arvore57 .tronco {
+  left: 43px;
+}
+
+#arvore41 .tronco,
+#arvore42 .tronco {
+  background-image: url("../img/arvore_tronco_3.png");
+}
+#arvore55 .tronco,
+#arvore56 .tronco,
+#arvore57 .tronco {
+  background-image: url("../img/arvore_tronco_2.png");
+}
+
+#arvore1 .copa {
+  background-image: url("../img/arvore_copa_2.png");
+}
+
+#arvore4 .copa,
+#arvore5 .copa {
+  background-image: url("../img/arvore_copa_1.png");
+}
+
+#arvore8 .copa {
+  background-image: url("../img/arvore_copa_4.png");
+}
+
+#arvore9 .copa,
+#arvore11 .copa,
+#arvore12 .copa {
+  background-image: url("../img/arvore_copa_6.png");
+}
+
+#arvore10 .copa {
+  background-image: url("../img/arvore_copa_5.png");
+}
+
+#arvore13 .copa,
+#arvore14 .copa {
+  background-image: url("../img/arvore_copa_7.png");
+}
+#arvore15 .copa,
+#arvore16 .copa {
+  background-image: url("../img/arvore_copa_17.png");
+}
+
+#arvore17 .copa {
+  background-image: url("../img/arvore_copa_15.png");
+}
+
+#arvore18 .copa {
+  background-image: url("../img/arvore_copa_16.png");
+}
+
+#arvore19 .copa,
+#arvore20 .copa {
+  background-image: url("../img/arvore_copa_10.png");
+}
+
+#arvore21 .copa {
+  background-image: url("../img/arvore_copa_8.png");
+}
+
+#arvore22 .copa {
+  background-image: url("../img/arvore_copa_9.png");
+}
+
+#arvore23 .copa {
+  background-image: url("../img/arvore_copa_21.png");
+}
+
+#arvore24 .copa {
+  background-image: url("../img/arvore_copa_22.png");
+}
+
+#arvore25 .copa {
+  background-image: url("../img/arvore_copa_22.png");
+}
+
+#arvore26 .copa {
+  background-image: url("../img/arvore_copa_18.png");
+}
+
+#arvore27 .copa {
+  background-image: url("../img/arvore_copa_19.png");
+}
+
+#arvore28 .copa {
+  background-image: url("../img/arvore_copa_20.png");
+}
+
+#arvore29 .copa {
+  background-image: url("../img/arvore_copa_23.png");
+}
+
+#arvore30 .copa {
+  background-image: url("../img/arvore_copa_24.png");
+}
+
+#arvore31 .copa {
+  background-image: url("../img/arvore_copa_13.png");
+}
+
+#arvore32 .copa {
+  background-image: url("../img/arvore_copa_12.png");
+}
+
+#arvore33 .copa {
+  background-image: url("../img/arvore_copa_11.png");
+}
+
+#arvore34 .copa {
+  background-image: url("../img/arvore_copa_14.png");
+}
+#arvore35 .copa {
+  background-image: url("../img/arvore_copa_34.png");
+}
+#arvore36 .copa {
+  background-image: url("../img/arvore_copa_34.png");
+}
+#arvore37 .copa {
+  background-image: url("../img/arvore_copa_32.png");
+}
+#arvore38 .copa {
+  background-image: url("../img/arvore_copa_36.png");
+}
+#arvore39 .copa {
+  background-image: url("../img/arvore_copa_35.png");
+}
+#arvore40 .copa {
+  background-image: url("../img/arvore_copa_33.png");
+}
+#arvore41 .copa {
+  background-image: url("../img/arvore_copa_27.png");
+}
+#arvore42 .copa {
+  background-image: url("../img/arvore_copa_26.png");
+}
+#arvore43 .copa {
+  background-image: url("../img/arvore_copa_25.png");
+}
+#arvore44 .copa,
+#arvore45 .copa {
+  background-image: url("../img/arvore_copa_39.png");
+}
+#arvore46 .copa {
+  background-image: url("../img/arvore_copa_43.png");
+}
+#arvore47 .copa {
+  background-image: url("../img/arvore_copa_41.png");
+}
+#arvore48 .copa {
+  background-image: url("../img/arvore_copa_40.png");
+}
+#arvore49 .copa {
+  background-image: url("../img/arvore_copa_42.png");
+}
+#arvore50 .copa {
+  background-image: url("../img/arvore_copa_31.png");
+}
+#arvore51 .copa {
+  background-image: url("../img/arvore_copa_28.png");
+}
+#arvore52 .copa {
+  background-image: url("../img/arvore_copa_30.png");
+}
+#arvore53 .copa {
+  background-image: url("../img/arvore_copa_29.png");
+}
+#arvore54 .copa {
+  background-image: url("../img/arvore_copa_30.png");
+}
+#arvore55 .copa {
+  background-image: url("../img/arvore_copa_38.png");
+}
+#arvore56 .copa {
+  background-image: url("../img/arvore_copa_37.png");
+}
+#arvore57 .copa {
+  background-image: url("../img/arvore_copa_38.png");
+}
+
+.galinheiro {
+  background-image: url("../img/casinha.png");
+  width: 152px;
+  height: 250px;
+  top: 2027px;
+  left: 687px;
+}
+
+.lavoura {
+  background-image: url("../img/lavoura.png");
+  width: 432px;
+  height: 122px;
+}
+#lavoura1 {
+  top: 1800px;
+  left: 300px;
+}
+#lavoura2 {
+  top: 1667px;
+  left: 900px;
+  clip: rect(90px, 280px, 160px, 80px);
+}
+#lavoura3 {
+  top: 1842px;
+  left: 1223px;
+  clip: rect(90px, 257px, 160px, 80px);
+}
+#lavoura4 {
+  top: 1950px;
+  left: 1000px;
+  clip: rect(0px, 432px, 122px, 0px);
+}
+.planta {
+  background-image: url("../img/planta.png");
+  width: 30px;
+  height: 82px;
+  top: 0;
+  left: 0;
+}
+.planta:nth-of-type(1) {
+  top: 1782px;
+  left: 313px;
+}
+.planta:nth-of-type(2) {
+  top: 1725px;
+  left: 394px;
+}
+.planta:nth-of-type(3) {
+  top: 1823px;
+  left: 406px;
+}
+.planta:nth-of-type(4) {
+  top: 1725px;
+  left: 449px;
+}
+.planta:nth-of-type(5) {
+  top: 1782px;
+  left: 528px;
+}
+.planta:nth-of-type(6) {
+  top: 1782px;
+  left: 637px;
+}
+.planta:nth-of-type(7) {
+  top: 1823px;
+  left: 567px;
+}
+.planta:nth-of-type(8) {
+  top: 1590px;
+  left: 1049px;
+}
+.planta:nth-of-type(9) {
+  top: 1647px;
+  left: 933px;
+}
+.planta:nth-of-type(10) {
+  top: 1687px;
+  left: 1020px;
+}
+
+#monstro {
+  width: 363px;
+  height: 62px;
+  top: 4190px;
+  left: 3034px;
+}
+#monstro .parte:first-of-type {
+  background-image: url("../img/monstro_corpo.png");
+  width: 117px;
+  height: 59px;
+  top: 3px;
+  left: 9px;
+}
+#monstro .parte:last-of-type {
+  background-image: url("../img/monstro_corpo.png");
+  width: 117px;
+  height: 59px;
+  top: 3px;
+  left: 141px;
+}
+#monstro .cabeca {
+  background-image: url("../img/monstro_cabeca.png");
+  width: 71px;
+  height: 27px;
+  left: 282px;
+  top: 32px;
+}
+#monstro .onda:first-of-type {
+  background-image: url("../img/monstro_onda.png");
+  width: 262px;
+  height: 7px;
+  top: 57px;
+  left: 0px;
+}
+#monstro .onda:last-of-type {
+  background-image: url("../img/monstro_onda_2.png");
+  width: 81px;
+  height: 7px;
+  top: 57px;
+  left: 282px;
+}
+
+/* começa o mundo 2 */
+.carro {
+  width: 142px;
+  height: 86px;
+}
+
+#carro1 {
+  background-image: url("../img/carro_violeta.png");
+  top: 2104px;
+  left: 2617px;
+}
+
+#carro2 {
+  background-image: url("../img/carro_lilas.png");
+  top: 2082px;
+  left: 2774px;
+}
+
+#carro3 {
+  background-image: url("../img/carro_rosa.png");
+  top: 2150px;
+  left: 2862px;
+}
+
+#carro4 {
+  background-image: url("../img/carro_verde.png");
+  top: 1609px;
+  left: 1915px;
+}
+#carro5 {
+  background-image: url("../img/carro_azul.png");
+  top: 1613px;
+  left: 2088px;
+}
+
+#aeroporto {
+  background-image: url("../img/aeroporto.png");
+  width: 571px;
+  height: 253px;
+  top: 2213px;
+  left: 2345px;
+}
+
+#torre {
+  background-image: url("../img/torre.png");
+  width: 177px;
+  height: 447px;
+  top: 2165px;
+  left: 2705px;
+}
+
+#predio1 {
+  background-image: url("../img/construcao_1.png");
+  width: 249px;
+  height: 421px;
+  top: 1906px;
+  left: 2148px;
+}
+
+#predio2 {
+  background-image: url("../img/construcao_2.png");
+  width: 173px;
+  height: 485px;
+  top: 1802px;
+  left: 2417px;
+}
+
+#predio3 {
+  background-image: url("../img/construcao_3.png");
+  width: 257px;
+  height: 220px;
+  top: 2101px;
+  left: 1774px;
+}
+
+#predio4 {
+  background-image: url("../img/construcao_4.png");
+  width: 257px;
+  height: 220px;
+  top: 2067px;
+  left: 1455px;
+}
+
+#predio5 {
+  background-image: url("../img/construcao_5.png");
+  width: 184px;
+  height: 219px;
+  top: 2347px;
+  left: 1811px;
+}
+
+#predio6 {
+  background-image: url("../img/construcao_6.png");
+  width: 206px;
+  height: 134px;
+  top: 688px;
+  left: 732px;
+}
+#predio7 {
+  background-image: url("../img/construcao_7.png");
+  width: 331px;
+  height: 451px;
+  top: 446px;
+  left: 919px;
+}
+#predio8 {
+  background-image: url("../img/construcao_8.png");
+  width: 149px;
+  height: 333px;
+  top: 375px;
+  left: 1578px;
+}
+#predio9 {
+  background-image: url("../img/construcao_9.png");
+  width: 149px;
+  height: 323px;
+  top: 1100px;
+  left: 1602px;
+}
+#predio10 {
+  background-image: url("../img/construcao_10.png");
+  width: 256px;
+  height: 278px;
+  top: 789px;
+  left: 1576px;
+}
+#predio11 {
+  background-image: url("../img/construcao_11.png");
+  width: 149px;
+  height: 328px;
+  top: 1093px;
+  left: 2105px;
+}
+#predio12 {
+  background-image: url("../img/construcao_12.png");
+  width: 138px;
+  height: 336px;
+  top: 1119px;
+  left: 1734px;
+}
+#predio13 {
+  background-image: url("../img/construcao_23.png");
+  width: 149px;
+  height: 323px;
+  top: 1307px;
+  left: 1347px;
+}
+#predio14 {
+  background-image: url("../img/construcao_22.png");
+  width: 149px;
+  height: 323px;
+  top: 1587px;
+  left: 707px;
+}
+#predio15 {
+  background-image: url("../img/construcao_21.png");
+  width: 138px;
+  height: 341px;
+  top: 1321px;
+  left: 1480px;
+}
+#predio16 {
+  background-image: url("../img/construcao_17.png");
+  width: 149px;
+  height: 336px;
+  top: 1678px;
+  left: 1651px;
+}
+#predio17 {
+  background-image: url("../img/construcao_15.png");
+  width: 138px;
+  height: 336px;
+  top: 1718px;
+  left: 351px;
+}
+#predio18 {
+  background-image: url("../img/construcao_14.png");
+  width: 381px;
+  height: 265px;
+  top: 1789px;
+  left: 490px;
+}
+#predio19 {
+  width: 221px;
+  height: 302px;
+  top: 2057px;
+  left: 166px;
+}
+#predio19 .predio {
+  background-image: url("../img/construcao_16.png");
+  width: 221px;
+  height: 302px;
+}
+#predio19 .coelhinho.corpo {
+  background-image: url("../img/coelho_escondido_2.png");
+  width: 75px;
+  height: 81px;
+  bottom: 10px;
+  left: 191px;
+}
+#predio19 .coelhinho.pata {
+  background-image: url("../img/coelho_escondido_2_pata.png");
+  width: 8px;
+  height: 8px;
+  bottom: 18px;
+  left: 214px;
+}
+#predio20 {
+  background-image: url("../img/construcao_13.png");
+  width: 138px;
+  height: 339px;
+  top: 1996px;
+  left: 902px;
+}
+#predio21 {
+  background-image: url("../img/construcao_18.png");
+  width: 215px;
+  height: 554px;
+  top: 1032px;
+  left: 1913px;
+}
+#predio22 {
+  background-image: url("../img/construcao_19.png");
+  width: 173px;
+  height: 722px;
+  top: 1196px;
+  left: 2231px;
+}
+#predio23 {
+  background-image: url("../img/construcao_20.png");
+  width: 249px;
+  height: 421px;
+  top: 1654px;
+  left: 1941px;
+}
+#predio24 {
+  background-image: url("../img/construcao_24.png");
+  width: 514px;
+  height: 485px;
+  top: 10px;
+  left: 576px;
+}
+#predio25 {
+  background-image: url("../img/construcao_26.png");
+  width: 215px;
+  height: 538px;
+  top: 88px;
+  left: 1420px;
+}
+#predio26 {
+  background-image: url("../img/construcao_25.png");
+  width: 215px;
+  height: 303px;
+  top: 315px;
+  left: 1284px;
+}
+#predio26 .suporte {
+  background-color: #000;
+  width: 8px;
+  height: 20px;
+  top: -19px;
+  left: 101px;
+}
+#predio26 .ovo {
+  background-image: url("../img/ovo_predio.png");
+  width: 77px;
+  height: 129px;
+  top: -137px;
+  left: 66px;
+}
+#predio27 {
+  background-image: url("../img/construcao_27.png");
+  width: 215px;
+  height: 421px;
+  top: 261px;
+  left: 1939px;
+}
+
+.morrinho_roxo {
+  background-image: url("../img/morrinho_roxo.png");
+}
+
+#morrinho_roxo1 {
+  width: 198px;
+  height: 63px;
+  top: 2282px;
+  left: 2056px;
+}
+
+#morrinho_roxo2 {
+  width: 228px;
+  height: 72px;
+  top: 2543px;
+  left: 2735px;
+}
+
+.sino_voador {
+  background-image: url("../img/sino_voador.png");
+  width: 138px;
+  height: 116px;
+}
+
+#sino_voador1 {
+  top: 2354px;
+  left: 2121px;
+}
+
+#sino_voador2 {
+  top: 2483px;
+  left: 2428px;
+}
+
+#sino_voador_oceano {
+  background-image: url("../img/sino_voador_oceano.png");
+  width: 166px;
+  height: 274px;
+  top: 2483px;
+  left: 3308px;
+}
+
+#caminhao {
+  width: 324px;
+  height: 97px;
+  top: 2375px;
+  left: 2897px;
+}
+
+#caminhao_carroceria {
+  background-image: url("../img/caminhao_carroceria.png");
+  width: 324px;
+  height: 97px;
+}
+
+#caminhao_ovos {
+  background-image: url("../img/caminhao_ovos.png");
+  width: 186px;
+  height: 26px;
+  top: 45px;
+  left: 51px;
+}
+
+.mesa_sombrinha {
+  width: 99px;
+  height: 106px;
+}
+.mesa_sombrinha.lilas {
+  background-image: url("../img/mesa_sombrinha_lilas.png");
+}
+.mesa_sombrinha.verde {
+  background-image: url("../img/mesa_sombrinha_verde.png");
+}
+.mesa_sombrinha.branca {
+  background-image: url("../img/mesa_sombrinha_branca.png");
+}
+.mesa_sombrinha.roxa {
+  background-image: url("../img/mesa_sombrinha_roxa.png");
+}
+.mesa_sombrinha.azul {
+  background-image: url("../img/mesa_sombrinha_azul.png");
+}
+.mesa_sombrinha.azul_escuro {
+  background-image: url("../img/mesa_sombrinha_azul_escuro.png");
+}
+.mesa_sombrinha.violeta {
+  background-image: url("../img/mesa_sombrinha_violeta.png");
+}
+.mesa_sombrinha.cinza {
+  background-image: url("../img/mesa_sombrinha_cinza.png");
+}
+.mesa_sombrinha.verde_agua {
+  background-image: url("../img/mesa_sombrinha_verde_agua.png");
+}
+.mesa_sombrinha.verde_limao {
+  background-image: url("../img/mesa_sombrinha_verde_limao.png");
+}
+.mesa_sombrinha.laranja {
+  background-image: url("../img/mesa_sombrinha_laranja.png");
+}
+
+#mesa1 {
+  top: 2173px;
+  left: 1186px;
+}
+#mesa2 {
+  top: 2208px;
+  left: 1337px;
+}
+#mesa3 {
+  top: 2273px;
+  left: 1220px;
+}
+#mesa4 {
+  top: 2335px;
+  left: 1691px;
+}
+#mesa5 {
+  top: 2380px;
+  left: 1580px;
+}
+#mesa6 {
+  top: 1876px;
+  left: 704px;
+}
+#mesa7 {
+  width: 119px;
+  height: 128px;
+  top: 872px;
+  left: 869px;
+}
+#mesa8 {
+  width: 119px;
+  height: 128px;
+  top: 800px;
+  left: 714px;
+}
+#mesa9 {
+  top: 1557px;
+  left: 1699px;
+}
+#mesa10 {
+  top: 1624px;
+  left: 1798px;
+}
+#mesa11 {
+  top: 2058px;
+  left: 1220px;
+}
+#mesa12 {
+  top: 2120px;
+  left: 1144px;
+}
+#mesa13 {
+  top: 2069px;
+  left: 1550px;
+}
+#mesa14 {
+  top: 720px;
+  left: 1775px;
+}
+#mesa15 {
+  top: 695px;
+  left: 1924px;
+}
+#mesa16 {
+  top: 798px;
+  left: 1849px;
+}
+
+.chafariz {
+  width: 152px;
+  height: 143px;
+}
+.chafariz .base {
+  width: 152px;
+  height: 38px;
+  top: 105px;
+}
+.chafariz .agua {
+  width: 108px;
+  height: 107px;
+  left: 23px;
+}
+
+#chafariz_1 {
+  top: 2254px;
+  left: 1496px;
+}
+#chafariz_1 .base {
+  background-image: url("../img/chafariz.png");
+}
+#chafariz_1 .agua {
+  background-image: url("../img/chafariz_agua.png");
+}
+
+#chafariz_2 {
+  top: 2048px;
+  left: 1341px;
+}
+#chafariz_2 .base {
+  background-image: url("../img/chafariz_2.png");
+}
+#chafariz_2 .agua {
+  background-image: url("../img/chafariz_agua_2.png");
+  left: 17px;
+}
+
+#peixaria1 {
+  background-image: url("../img/peixaria_1.png");
+  width: 232px;
+  height: 247px;
+  top: 2126px;
+  left: 898px;
+}
+
+#peixaria2 {
+  background-image: url("../img/peixaria_2.png");
+  width: 232px;
+  height: 143px;
+  top: 2526px;
+  left: 1379px;
+}
+
+#barraquinha_peixe {
+  width: 141px;
+  height: 144px;
+  top: 2023px;
+  left: 1280px;
+}
+
+#barraquinha_peixe .base {
+  background-image: url("../img/barraquinha_peixe_base.png");
+  width: 120px;
+  height: 118px;
+  top: 26px;
+  left: 13px;
+}
+#barraquinha_peixe .toldo {
+  background-image: url("../img/barraquinha_peixe_toldo.png");
+  width: 145px;
+  height: 42px;
+}
+#barraquinha_peixe .coelho {
+  background-image: url("../img/coelho_peixeiro.png");
+  width: 45px;
+  height: 60px;
+  top: 35px;
+  left: 57px;
+}
+
+#plaquinha {
+  width: 63px;
+  height: 170px;
+  top: 2732px;
+  left: 1803px;
+}
+#plaquinha .barco {
+  background-image: url("../img/placa_barco.png");
+  width: 63px;
+  height: 50px;
+}
+
+#plaquinha .haste {
+  background-image: url("../img/placa_haste.png");
+  width: 6px;
+  height: 132px;
+  top: 38px;
+  left: 26px;
+}
+
+#mulher {
+  background-image: url("../img/mulher.png");
+  width: 165px;
+  height: 113px;
+  top: 2795px;
+  left: 1912px;
+}
+
+#navio {
+  width: 714px;
+  height: 167px;
+  top: 3233px;
+  left: 1661px;
+}
+#navio .ovos {
+  background-image: url("../img/navio_ovos.png");
+  width: 411px;
+  height: 103px;
+  top: 29px;
+  left: 236px;
+}
+#navio .barcao {
+  background-image: url("../img/navio.png");
+  width: 695px;
+  height: 159px;
+}
+#navio .onda {
+  background-image: url("../img/onda_1.png");
+  width: 714px;
+  height: 10px;
+  top: 152px;
+  left: -15px;
+}
+#navio .bolhas {
+  top: 145px;
+  left: -60px;
+}
+
+.bolha {
+  background-image: url("../img/bolha.png");
+  width: 14px;
+  height: 14px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.bolha.clara {
+  background-image: url("../img/bolha_2.png");
+}
+.bolha:nth-of-type(1) {
+  left: 0px;
+}
+.bolha:nth-of-type(2) {
+  left: 31px;
+}
+.bolha:nth-of-type(3) {
+  left: 62px;
+}
+
+.barquinho .onda {
+  background-image: url("../img/onda_3.png");
+  width: 294px;
+  height: 29px;
+}
+.barquinho .barco {
+  background-image: url("../img/barco_1.png");
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+#barquinho1 {
+  width: 197px;
+  height: 135px;
+  top: 2461px;
+  left: 935px;
+}
+#barquinho1 .barco {
+  background-image: url("../img/barco_1.png");
+}
+#barquinho1 .onda {
+  top: 124px;
+  left: -12px;
+}
+
+#barquinho2 {
+  width: 234px;
+  height: 160px;
+  top: 2727px;
+  left: 770px;
+}
+#barquinho2 .barco {
+  background-image: url("../img/barco_2.png");
+}
+#barquinho2 .onda {
+  top: 148px;
+  left: -1px;
+}
+#barquinho2 .bolhas {
+  top: 149px;
+  left: -88px;
+}
+
+#barquinho3 {
+  width: 173px;
+  height: 264px;
+  top: 2307px;
+  left: 535px;
+}
+#barquinho3 .barco {
+  background-image: url("../img/barco_3.png");
+}
+#barquinho3 .onda {
+  top: 237px;
+  left: -28px;
+}
+#barquinho3 .bolhas {
+  top: 233px;
+  left: 187px;
+}
+
+#barquinho4 {
+  width: 173px;
+  height: 264px;
+  top: 2245px;
+  left: 1038px;
+}
+#barquinho4 .barco {
+  background-image: url("../img/barco_4.png");
+}
+#barquinho4 .onda {
+  background-image: url("../img/onda_5.png");
+  top: 239px;
+  left: -28px;
+  width: 195px;
+}
+
+#barquinho5 {
+  width: 140px;
+  height: 55px;
+  top: 2625px;
+  left: 344px;
+}
+#barquinho5 .barco {
+  background-image: url("../img/barco_5.png");
+}
+#barquinho5 .onda {
+  background-image: url("../img/onda_2.png");
+  width: 357px;
+  height: 10px;
+  top: 50px;
+  left: -100px;
+}
+#barquinho5 .bolhas {
+  top: 43px;
+  left: -96px;
+}
+#barquinho6 {
+  width: 213px;
+  height: 94px;
+  top: 545px;
+  left: 7px;
+}
+#barquinho6 .barco {
+  background-image: url("../img/barco_6.png");
+}
+#barquinho6 .onda {
+  top: 83px;
+  left: 0px;
+}
+#barquinho6 .bolhas {
+  top: 76px;
+  left: 224px;
+}
+#barquinho7 {
+  width: 192px;
+  height: 82px;
+  top: 709px;
+  left: 2320px;
+}
+#barquinho7 .barco {
+  background-image: url("../img/barco_7.png");
+}
+#barquinho7 .onda {
+  top: 72px;
+  left: -12px;
+}
+
+#barquinho8 {
+  width: 311px;
+  height: 137px;
+  top: 534px;
+  left: 2363px;
+}
+#barquinho8 .barco {
+  background-image: url("../img/barco_8.png");
+}
+#barquinho8 .onda {
+  top: 125px;
+  left: 185px;
+}
+#barquinho9 {
+  width: 140px;
+  height: 55px;
+  top: 918px;
+  left: 1308px;
+}
+#barquinho9 .barco {
+  background-image: url("../img/barco_9.png");
+}
+#barquinho9 .onda {
+  background-image: url("../img/onda_4.png");
+  width: 357px;
+  height: 10px;
+  top: 50px;
+  left: -100px;
+}
+#barquinho9 .bolhas {
+  top: 43px;
+  left: -96px;
+}
+#barquinho10 {
+  width: 173px;
+  height: 264px;
+  top: 2678px;
+  left: 3095px;
+}
+#barquinho10 .barco {
+  background-image: url("../img/barco_4.png");
+}
+#barquinho10 .onda {
+  top: 239px;
+  left: -51px;
+}
+#barquinho10 .bolhas {
+  top: 233px;
+  left: -81px;
+}
+#barquinho11 {
+  width: 173px;
+  height: 264px;
+  top: 2851px;
+  left: 3265px;
+}
+#barquinho11 .barco {
+  background-image: url("../img/barco_11.png");
+}
+#barquinho11 .onda {
+  top: 239px;
+  left: -51px;
+}
+#barquinho11 .bolhas {
+  top: 233px;
+  left: -81px;
+}
+
+#tubarao {
+  top: 2346px;
+  left: 200px;
+  height: 59px;
+  width: 357px;
+  overflow: hidden;
+}
+#tubarao .barbatana {
+  width: 61px;
+  height: 59px;
+  background-image: url("../img/tubarao.png");
+  top: 0;
+  left: 0;
+}
+#tubarao .onda {
+  background-image: url("../img/onda_2.png");
+  width: 357px;
+  height: 10px;
+  top: 54px;
+  left: 0px;
+}
+
+#farol {
+  background-image: url("../img/farol.png");
+  width: 176px;
+  height: 587px;
+  top: 2503px;
+  left: 1183px;
+}
+
+.gaivota {
+  background-image: url("../img/gaivota.png");
+  width: 39px;
+  height: 39px;
+}
+
+#gaivota_farol {
+  top: 2461px;
+  left: 1254px;
+}
+
+#gaivota_farol .pe {
+  background-color: #eac965;
+  width: 3px;
+  height: 6px;
+  top: 38px;
+  left: 15px;
+}
+
+.gaivotas.mar .gaivota:nth-of-type(1) {
+  top: 3030px;
+  left: 1388px;
+}
+.gaivotas.mar .gaivota:nth-of-type(2) {
+  top: 3083px;
+  left: 1552px;
+}
+.gaivotas.mar .gaivota:nth-of-type(3) {
+  top: 3133px;
+  left: 1599px;
+}
+.gaivotas.mar .gaivota:nth-of-type(4) {
+  top: 3087px;
+  left: 1639px;
+}
+
+.gaivotas.lago .gaivota:nth-of-type(1) {
+  top: 2908px;
+  left: 1380px;
+}
+.gaivotas.lago .gaivota:nth-of-type(2) {
+  top: 2997px;
+  left: 1214px;
+}
+
+#lojinha {
+  background-image: url("../img/lojinha_mundo_2.png");
+  width: 222px;
+  height: 249px;
+  top: 1793px;
+  left: 1011px;
+}
+
+#ponte {
+  background-image: url("../img/ponte.png");
+  width: 913px;
+  height: 132px;
+  top: 1743px;
+  left: 251px;
+}
+
+#roda_gigante {
+  width: 559px;
+  height: 643px;
+  top: 1133px;
+  left: 235px;
+}
+#roda_gigante .base.frente {
+  background-image: url("../img/roda_gigante_frente.png");
+  width: 559px;
+  height: 643px;
+}
+#roda_gigante .base.fundo {
+  background-image: url("../img/roda_gigante_fundo.png");
+  width: 380px;
+  height: 354px;
+  top: 289px;
+  left: 89px;
+}
+#roda_gigante .placa {
+  background-image: url("../img/roda_gigante_placa.png");
+  width: 566px;
+  height: 575px;
+  top: -9px;
+  left: -3px;
+}
+#roda_gigante .ovos {
+  width: 560px;
+  height: 560px;
+  top: 0;
+  left: 0;
+}
+#roda_gigante .ovo {
+  background-image: url("../img/roda_gigante_ovo.png");
+  width: 70px;
+  height: 97px;
+}
+#roda_gigante .ovo:nth-of-type(1) {
+  top: -29px;
+  left: 245px;
+}
+#roda_gigante .ovo:nth-of-type(2) {
+  top: 81px;
+  left: 37px;
+}
+#roda_gigante .ovo:nth-of-type(3) {
+  top: 81px;
+  left: 452px;
+}
+#roda_gigante .ovo:nth-of-type(4) {
+  top: 258px;
+  left: -29px;
+}
+#roda_gigante .ovo:nth-of-type(5) {
+  top: 258px;
+  left: 516px;
+}
+#roda_gigante .ovo:nth-of-type(6) {
+  top: 440px;
+  left: 37px;
+}
+#roda_gigante .ovo:nth-of-type(7) {
+  top: 440px;
+  left: 452px;
+}
+#roda_gigante .ovo:nth-of-type(8) {
+  top: 526px;
+  left: 245px;
+}
+
+.fogos .roxo.explosao {
+  background-image: url("../img/explosao_roxa.png");
+  width: 194px;
+  height: 153px;
+}
+.fogos .cinza.explosao {
+  background-image: url("../img/explosao_cinza.png");
+  width: 155px;
+  height: 77px;
+}
+.fogos .roxo.rastro {
+  background-image: url("../img/explosao_roxa_rastro.png");
+  width: 54px;
+  height: 114px;
+  top: 102px;
+  left: 115px;
+}
+.fogos .cinza.rastro {
+  background-image: url("../img/explosao_cinza_rastro.png");
+  width: 20px;
+  height: 96px;
+  top: 54px;
+  left: 59px;
+}
+
+#fogos_1 {
+  top: 927px;
+  left: 92px;
+}
+#fogos_2 {
+  top: 825px;
+  left: 288px;
+}
+#fogos_3 {
+  top: 991px;
+  left: 298px;
+}
+
+#tunel {
+  background-image: url("../img/tunel.png");
+  width: 560px;
+  height: 235px;
+  top: 258px;
+  left: 1152px;
+}
+
+#monumento_arcos {
+  background-image: url("../img/arcos.png");
+  width: 680px;
+  height: 279px;
+  top: 1713px;
+  left: 1600px;
+}
+#monumento_arcos .relogio {
+  background-image: url("../img/arcos_relogio.png");
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  height: 57px;
+  width: 57px;
+  top: 114px;
+  left: 309px;
+}
+
+/* mundo 3 */
+
+#arco {
+  width: 269px;
+  height: 309px;
+  top: 983px;
+  left: 1295px;
+}
+#arco .arco {
+  background-image: url("../img/arco.png");
+  width: 269px;
+  height: 309px;
+}
+#arco .coelhinho.corpo {
+  background-image: url("../img/coelho_escondido_1.png");
+  width: 75px;
+  height: 81px;
+  bottom: 10px;
+  left: 117px;
+}
+#arco .coelhinho.pata {
+  background-image: url("../img/coelho_escondido_1_pata.png");
+  width: 8px;
+  height: 8px;
+  bottom: 8px;
+  left: 160px;
+}
+
+#catedral_1 {
+  background-image: url("../img/catedral_1.png");
+  width: 485px;
+  height: 467px;
+  top: 1547px;
+  left: 1178px;
+}
+#catedral_1 .relogio {
+  background-image: url("../img/catedral_relogio.png");
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  height: 58px;
+  width: 58px;
+  top: 223px;
+  left: 215px;
+}
+
+#catedral_2 {
+  background-image: url("../img/catedral_2.png");
+  width: 411px;
+  height: 451px;
+  top: 1103px;
+  left: 754px;
+}
+
+#obelisco {
+  background-image: url("../img/obelisco.png");
+  width: 110px;
+  height: 344px;
+  top: 1478px;
+  left: 894px;
+}
+
+.coqueiro {
+  width: 164px;
+  height: 243px;
+}
+.coqueiro .folhas {
+  width: 100%;
+  height: 80.6%;
+}
+.coqueiro .tronco {
+  background-image: url("../img/coqueiro_tronco_2.png");
+  width: 31.1%;
+  height: 61.2%;
+  bottom: 0;
+  left: 56px;
+}
+.coqueiro .tronco.escuro {
+  background-image: url("../img/coqueiro_tronco_1.png");
+}
+
+#coqueiro1 {
+  width: 106px;
+  height: 134px;
+  top: 1160px;
+  left: 1176px;
+}
+#coqueiro2 {
+  width: 106px;
+  height: 134px;
+  top: 1160px;
+  left: 1513px;
+}
+#coqueiro3 {
+  width: 106px;
+  height: 134px;
+  top: 605px;
+  left: 620px;
+}
+#coqueiro4 {
+  width: 130px;
+  height: 163px;
+  top: 386px;
+  left: 1039px;
+}
+#coqueiro5 {
+  width: 130px;
+  height: 163px;
+  top: 639px;
+  left: 1209px;
+}
+#coqueiro6 {
+  width: 106px;
+  height: 134px;
+  top: 670px;
+  left: 1345px;
+}
+#coqueiro7 {
+  width: 130px;
+  height: 163px;
+  top: 605px;
+  left: 1639px;
+}
+#coqueiro8 {
+  width: 130px;
+  height: 163px;
+  top: 356px;
+  left: 1711px;
+}
+#coqueiro9 {
+  width: 106px;
+  height: 134px;
+  top: 520px;
+  left: 2121px;
+}
+#coqueiro10 {
+  width: 106px;
+  height: 134px;
+  top: 786px;
+  left: 481px;
+}
+#coqueiro11 {
+  width: 130px;
+  height: 163px;
+  top: 717px;
+  left: 358px;
+}
+
+#coqueiro4 .tronco,
+#coqueiro5 .tronco,
+#coqueiro7 .tronco,
+#coqueiro8 .tronco,
+#coqueiro11 .tronco {
+  left: 68px;
+}
+
+#coqueiro1 .folhas {
+  background-image: url("../img/coqueiro_lilas.png");
+}
+#coqueiro2 .folhas {
+  background-image: url("../img/coqueiro_roxo.png");
+}
+#coqueiro3 .folhas {
+  background-image: url("../img/coqueiro_laranja_1.png");
+}
+#coqueiro4 .folhas {
+  background-image: url("../img/coqueiro_laranja_2.png");
+}
+#coqueiro5 .folhas {
+  background-image: url("../img/coqueiro_verde_2.png");
+}
+#coqueiro6 .folhas {
+  background-image: url("../img/coqueiro_laranja_1.png");
+}
+#coqueiro7 .folhas {
+  background-image: url("../img/coqueiro_laranja_1.png");
+}
+#coqueiro8 .folhas {
+  background-image: url("../img/coqueiro_laranja_2.png");
+}
+#coqueiro9 .folhas {
+  background-image: url("../img/coqueiro_verde_1.png");
+}
+#coqueiro10 .folhas {
+  background-image: url("../img/coqueiro_laranja_1.png");
+}
+#coqueiro11 .folhas {
+  background-image: url("../img/coqueiro_verde_1.png");
+}
+
+#menino_parque {
+  background-image: url("../img/menino.png");
+  width: 95px;
+  height: 112px;
+  top: 2826px;
+  left: 1594px;
+}
+
+#balanco {
+  background-image: url("../img/balanco.png");
+  width: 82px;
+  height: 134px;
+  top: 2573px;
+  left: 1470px;
+}
+
+#castelinho_1 {
+  background-image: url("../img/castelinho_1.png");
+  width: 78px;
+  height: 220px;
+  top: 2510px;
+  left: 1587px;
+}
+#castelinho_2 {
+  background-image: url("../img/castelinho_2.png");
+  width: 80px;
+  height: 181px;
+  top: 2549px;
+  left: 1680px;
+}
+
+.carro_golfe {
+  width: 100px;
+  height: 85px;
+}
+#carro_golfe_1 {
+  background-image: url("../img/golfe_carrinho_branco.png");
+  top: 628px;
+  left: 1465px;
+}
+#carro_golfe_2 {
+  background-image: url("../img/golfe_carrinho_verde.png");
+  top: 681px;
+  left: 1526px;
+}
+
+.taxi {
+  width: 127px;
+  height: 100px;
+}
+.taxi.amarelo {
+  background-image: url("../img/taxi_amarelo.png");
+  top: 1853px;
+  left: 2162px;
+}
+.taxi.verde {
+  background-image: url("../img/taxi_verde.png");
+  top: 2002px;
+  left: 2148px;
+}
+
+.golfe {
+  background-image: url("../img/golfe_bandeira.png");
+  width: 27px;
+  height: 79px;
+}
+.golfe .buraco {
+  background-image: url("../img/golfe_buraco.png");
+  width: 15px;
+  height: 6px;
+}
+
+#golfe_1 {
+  top: 696px;
+  left: 808px;
+}
+#golfe_1 .buraco {
+  top: 81px;
+  left: 9px;
+}
+#golfe_2 {
+  top: 530px;
+  left: 1183px;
+}
+#golfe_2 .buraco {
+  top: 77px;
+  left: 20px;
+}
+
+#coelho_nadando {
+  background-image: url("../img/coelho_nadando.png");
+  width: 33px;
+  height: 53px;
+  top: 546px;
+  left: 1826px;
+}
+
+#world .toPlay {
+  width: 120px;
+  height: 160px;
+}
+
+#toPlay1 {
+  background-image: url("../img/ovo_jogo1.png");
+  top: 1580px;
+  left: 940px;
+}
+#toPlay2 {
+  background-image: url("../img/ovo_jogo2.png");
+  top: 1190px;
+  left: 980px;
+}
+#toPlay3 {
+  background-image: url("../img/ovo_jogo3.png");
+  top: 1578px;
+  left: 994px;
+}
+
+@media (max-width: 1200px) {
+  #world .seta {
+    width: 60px;
+    height: 60px;
+  }
+  #world .seta.top {
+    top: 3px;
+    margin-left: -30px;
+  }
+  #world .seta.right {
+    right: 3px;
+    margin-top: -30px;
+  }
+  #world .seta.bottom {
+    bottom: 3px;
+    margin-left: -30px;
+  }
+  #world .seta.left {
+    left: 3px;
+    margin-top: -30px;
+  }
+}
+@media (max-width: 800px) {
+  #world .seta {
+    width: 40px;
+    height: 40px;
+  }
+  #world .seta.top {
+    top: 30px;
+    margin-left: -20px;
+  }
+  #world .seta.right {
+    right: 3px;
+    margin-top: -20px;
+  }
+  #world .seta.bottom {
+    bottom: 30px;
+    margin-left: -20px;
+  }
+  #world .seta.left {
+    left: 3px;
+    margin-top: -20px;
+  }
+}

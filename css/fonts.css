@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Capriola';
+    src: url('fonts/capriola-regular.eot');
+    src: url('fonts/capriola-regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/capriola-regular.woff') format('woff'),
+         url('fonts/capriola-regular.ttf') format('truetype'),
+         url('fonts/capriola-regular.svg#Capriola') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

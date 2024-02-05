@@ -1,0 +1,2540 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Leonidas Chocolate Easterworld</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1,maximum-scale=1"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta property="og:image" content="img/fb_logo.png" />
+    <link type="text/css" rel="stylesheet" href="css/styles.css" />
+    <link type="text/css" rel="stylesheet" href="css/world.css" />
+    <script src="js/libs/jquery.js"></script>
+    <script src="js/libs/knockout.js"></script>
+    <script src="js/libs/moment.js"></script>
+    <script src="js/libs/jquery.mobile.custom.min.js"></script>
+    <script src="js/libs/jquery.pep.js"></script>
+    <script src="js/libs/greensock/TimelineMax.min.js"></script>
+    <script src="js/libs/greensock/TweenMax.min.js"></script>
+    <script src="js/libs/greensock/plugins/CSSPlugin.min.js"></script>
+    <script src="js/libs/greensock/utils/Draggable.min.js"></script>
+    <script data-main="js/animations" src="js/libs/require.js"></script>
+    <script src="js/libs/sha512.js"></script>
+  </head>
+  <body data-bind="attr: { 'class': lang }">
+    <div id="fb-root"></div>
+
+    <div class="wait" data-bind="visible: !loaded()">
+      EasterWorld is loading ...
+      <div class="loadImg">
+        <div></div>
+      </div>
+    </div>
+    <div
+      id="main"
+      style="display: none"
+      data-bind="visible: loaded, css: { logged: true }"
+    >
+      <section
+        class="incompatible"
+        data-bind="visible:screen()=='incompatible'"
+      >
+        <div class="logo square"></div>
+        <p>Dear visitor,</p>
+        <p>
+          It looks like your browser is not up to date.
+          <br />
+          This prevents you from opening this website.
+        </p>
+        <p>Click this link to go to the update page of your browser.</p>
+        <a
+          href="http://www.mozilla.org/firefox/new/"
+          class="browser firefox"
+        ></a>
+        <a href="https://www.google.com/chrome" class="browser chrome"></a>
+        <p>
+          After the update please make sure to return to
+          <br />
+          this website to discover, play and win great prize.
+        </p>
+        <p>the Leonidas team</p>
+        <!--<span data-bind="html:'This browser is incompatible.'"></span>-->
+        <!--<span data-bind="html:getText('incompatible')"></span>-->
+      </section>
+
+      <section data-bind="visible:screen()=='loading'">Loading</section>
+
+      <section class="language" data-bind="visible:screen()=='language'">
+        <div class="logo easter"></div>
+        <div class="flags">
+          <button class="NL" data-bind="click:function(){goMessage('NL');}">
+            <span>Welkom</span>
+          </button>
+          <span>-</span>
+          <button class="FR" data-bind="click:function(){goMessage('FR');}">
+            <span>Bienvenue</span>
+          </button>
+          <span>-</span>
+          <button class="EN" data-bind="click:function(){goMessage('EN');}">
+            <span>Welcome</span>
+          </button>
+        </div>
+        <div class="logo square"></div>
+        <div class="cloud"></div>
+        <div class="cloud"></div>
+        <div class="cloud"></div>
+      </section>
+
+      <section
+        class="modal beginning"
+        data-bind="visible:screen()=='welcome' || screen()=='welcomeNoWin'"
+      >
+        <div class="aba esquerda">
+          <!--h3 data-bind="html: getText('bLeft')"></h3-->
+          <p data-bind="html: getText('easterbags')">Easterbags</p>
+        </div>
+        <div class="aba direita">
+          <h3 data-bind="html: getText('bRight')"></h3>
+          <p data-bind="html: getText('gamebox')">Gamebox</p>
+          <small data-bind="html: getText('clickForDetail')">Gamebox</small>
+        </div>
+        <div class="janela">
+          <h2 data-bind="html:getText('welcome')"></h2>
+          <div class="divisor">
+            <a
+              class="fb2"
+              data-bind="attr: { href: fb_lang }, html: getText('LoginWithFacebook')"
+            ></a>
+          </div>
+          <form class="login">
+            <label>
+              <input
+                type="email"
+                data-bind="value:reg_email, valueUpdate: 'afterkeydown', attr: { placeholder: getText('email'), title: getText('email') }"
+              />
+            </label>
+            <label>
+              <input
+                type="password"
+                data-bind="value:reg_pass, valueUpdate: 'afterkeydown', attr: { placeholder: getText('password'), title: getText('password') }"
+              />
+            </label>
+            <button
+              class="signup"
+              data-bind="html:getText('login'), click:okLogin"
+            ></button>
+          </form>
+          <div>
+            <button
+              data-bind="html:getText('register'), click:goRegister"
+            ></button>
+            <button
+              data-bind="html:getText('playForFun'), click:playForFun"
+            ></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="modal register" data-bind="visible:screen()=='register'">
+        <div class="janela">
+          <h2 data-bind="html:getText('register')"></h2>
+          <label>
+            <input
+              type="text"
+              data-bind="value:reg_name, valueUpdate: 'afterkeydown', attr: { placeholder: getText('name'), title: getText('name') }"
+            />
+          </label>
+          <label>
+            <input
+              type="email"
+              data-bind="value:reg_email, valueUpdate: 'afterkeydown', attr: { placeholder: getText('email'), title: getText('email') }"
+            />
+          </label>
+          <label>
+            <input
+              type="password"
+              data-bind="value:reg_pass, valueUpdate: 'afterkeydown', attr: { placeholder: getText('password'), title: getText('password') }"
+            /><br />
+          </label>
+          <!-- <label>
+                        <input type="password" data-bind="value:reg_pass2, valueUpdate: 'afterkeydown', attr: { placeholder: html:getText('repeatPassword')"><br>
+                    </label> -->
+          <label class="optOut">
+            <input type="checkbox" data-bind="checked:optOut" /><span
+              data-bind="html:getText('optOut')"
+            ></span>
+          </label>
+          <a href="faq" target="_blank" data-bind="html:getText('terms')"></a>
+          <button
+            class="centrado"
+            data-bind="html:getText('register'), click:okRegister"
+          ></button>
+        </div>
+      </section>
+
+      <section
+        class="modal information"
+        data-bind="visible: (screen()=='world' && firstStart())"
+      >
+        <div class="aba esquerda">
+          <p data-bind="html: getText('drag')"></p>
+        </div>
+        <div class="aba direita">
+          <p data-bind="html: getText('clickOn')"></p>
+        </div>
+        <div class="janela">
+          <div
+            data-bind="attr: { 'class': $root.wave()=='wave1'?'logo_blanche':($root.wave()=='wave2'?'logo_milky':'logo_dark') }"
+          ></div>
+
+          <h2
+            data-bind="html:$root.wave()=='wave1'?getText('home1'):($root.wave()=='wave2'?getText('home2'):getText('home3'))"
+          ></h2>
+          <div
+            data-bind="attr: { 'class': $root.wave()=='wave1'?'logo_easter_inclinado1':($root.wave()=='wave2'?'logo_easter_inclinado2':'logo_easter_inclinado3') }"
+          ></div>
+          <p data-bind="html:getText('search_and_click')"></p>
+          <button
+            data-bind="html:getText('continue'), click: function() { viewModel.firstStart(false); viewModel.screen(''); }"
+          ></button>
+        </div>
+      </section>
+
+      <div
+        class="logo easter header"
+        data-bind="visible: worldBackground"
+      ></div>
+      <div
+        class="logo square header"
+        data-bind="visible: worldBackground"
+      ></div>
+
+      <section
+        class="modal welcomeYouWinDaily"
+        data-bind="visible:screen()=='welcomeYouWinDaily'"
+      >
+        <div class="janela">
+          <form>
+            <h2 data-bind="html: getText('welcomeYouWinDailyEggs')"></h2>
+            <h3 data-bind="html: getText('welcomeYouWinDailyEggs2')"></h3>
+            <input
+              data-bind="value: prizeForm.name, attr: { placeholder: getText('name'), title: getText('name') }"
+              type="text"
+            />
+            <input
+              data-bind="value: prizeForm.email, attr: { placeholder: getText('email'), title: getText('email') }"
+              type="email"
+            />
+            <input
+              data-bind="value: prizeForm.street, attr: { placeholder: getText('street'), title: getText('street') }"
+              type="text"
+            />
+            <input
+              data-bind="value: prizeForm.number, attr: { placeholder: getText('number'), title: getText('number') }"
+              type="number"
+            />
+            <input
+              data-bind="value: prizeForm.birthdate, attr: { placeholder: getText('birthdate'), title: getText('birthdate') }"
+              type="date"
+            />
+            <input
+              data-bind="value: prizeForm.zip, attr: { placeholder: getText('zip'), title: getText('zip') }"
+              type="text"
+            />
+            <input
+              data-bind="value: prizeForm.city, attr: { placeholder: getText('city'), title: getText('city') }"
+              type="text"
+            />
+            <input
+              data-bind="value: prizeForm.country, attr: { placeholder: getText('country'), title: getText('country') }"
+              type="text"
+            />
+            <button data-bind="html:getText('proceed'),click:proceed">
+              Proceed.
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section
+        class="modal welcomeYouWinUnregister"
+        data-bind="visible:screen()=='welcomeYouWinUnregister'"
+      >
+        <div class="janela">
+          <h2 data-bind="html:getText('welcomeYouWinUnregister')"></h2>
+          <button
+            class="big centrado"
+            data-bind="html:getText('login'), click:backToWelcome"
+          ></button>
+          <button
+            class="centrado"
+            data-bind="html:getText('playAgain'), click:goPlaying"
+          ></button>
+          <button
+            class="centrado"
+            data-bind="html:getText('back'), click:goWorld"
+          ></button>
+        </div>
+      </section>
+
+      <section
+        class="modal youHaveTickets"
+        data-bind="visible:screen()=='youHaveTickets'"
+      >
+        <div class="janela">
+          <h2
+            data-bind="html:getText(viewModel.group()?'groupWin':'youHaveTickets')"
+          ></h2>
+          <button
+            class="big centrado"
+            data-bind="html:getText('proceed'),click:goWorld"
+          ></button>
+        </div>
+      </section>
+
+      <section
+        class="painel game1"
+        data-bind="visible: (screen()=='playing' && selectedGame()=='1')"
+      >
+        <div data-bind="visible: ($root.group() && $root.group().name)">
+          <span data-bind="html:$root.group() && $root.group().name"></span>
+        </div>
+        <div
+          data-bind="visible:token()!=null, css: { 'alone': !($root.group() && $root.group().name) }"
+        >
+          <span data-bind="html:name"></span>
+        </div>
+
+        <!-- ko with: game -->
+        <div>
+          <p class="score">
+            <span data-bind="html:$root.getText('score')"></span>
+            <b data-bind="html:$data.score"></b>
+          </p>
+          <p class="level">
+            <span data-bind="html:$root.getText('level')"></span>
+            <b data-bind="html:$data.level"></b>
+          </p>
+        </div>
+        <div>
+          <ul class="lifes">
+            <li class="ovni" data-bind="visible:lifes()>0"></li>
+            <li class="ovni" data-bind="visible:lifes()>1"></li>
+            <li class="ovni" data-bind="visible:lifes()>2"></li>
+          </ul>
+        </div>
+        <!-- /ko -->
+
+        <div>
+          <button
+            class="voltar"
+            data-bind="click: function() { viewModel.screen('tutorial'); }"
+          ></button>
+          <button
+            class="info"
+            data-bind="click: function() { viewModel.tutorial(!viewModel.tutorial()); }"
+          ></button>
+        </div>
+      </section>
+
+      <section
+        class="modal tutorial"
+        data-bind="visible: tutorial() && screen()=='playing'"
+      >
+        <!-- ko if:selectedGame()=='1' -->
+
+        <div class="aba esquerda"></div>
+        <div class="aba direita"></div>
+        <div class="janela">
+          <p
+            data-bind="html: getText(viewModel.group()?'groupTutorial':'game_tutorial')"
+          ></p>
+          <div id="tutorial2" class="esquemaTutorial">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+
+        <!-- /ko -->
+      </section>
+
+      <section
+        id="playing"
+        class="playing"
+        data-bind="visible:screen()=='playing', attr: { 'class': 'playing level' + game().theme() }"
+      >
+        <!-- ko if:selectedGame()=='1' -->
+
+        <!-- ko with: game -->
+
+        <!-- ko if: showTheme -->
+        <div class="showTheme">
+          <span
+            class="theme1"
+            data-bind="html:$root.getText('theme1'),visible:theme()==1"
+          ></span>
+          <span
+            class="theme2"
+            data-bind="html:$root.getText('theme2'),visible:theme()==2"
+          ></span>
+          <span
+            class="theme3"
+            data-bind="html:$root.getText('theme3'),visible:theme()==3"
+          ></span>
+        </div>
+        <!-- /ko -->
+
+        <div data-bind="visible:false" id="back2Reference"></div>
+
+        <div data-bind="visible:false" id="backReference"></div>
+
+        <div class="player" id="ovni">
+          <div class="light" id="light"></div>
+          <div class="ovni" id="hat"></div>
+        </div>
+
+        <button
+          class="seta right"
+          data-bind="visible:$root.imMobile,event: { 
+                        touchstart: function() {
+                            bp.sistema.entrada.teclado.teclas['39']=true;
+                        }, touchend: function() {
+                            bp.sistema.entrada.teclado.teclas['39']=false;
+                        } 
+                    }"
+        ></button>
+
+        <button
+          class="seta left"
+          data-bind="visible:$root.imMobile,event: { 
+                        touchstart: function() {
+                            bp.sistema.entrada.teclado.teclas['37']=true;
+                        }, touchend: function() {
+                            bp.sistema.entrada.teclado.teclas['37']=false;
+                        } 
+                    }"
+        ></button>
+
+        <!-- /ko -->
+
+        <!-- /ko -->
+      </section>
+
+      <section
+        class="painel game2"
+        data-bind="visible: (screen()=='playing' && selectedGame()=='2')"
+      >
+        <div data-bind="visible: ($root.group() && $root.group().name)">
+          <span data-bind="html:$root.group() && $root.group().name"></span>
+        </div>
+        <div
+          data-bind="visible:token()!=null, css: { 'alone': !($root.group() && $root.group().name) }"
+        >
+          <span data-bind="html:name"></span>
+        </div>
+        <!-- ko with: game -->
+        <div>
+          <p class="score">
+            <span data-bind="html:$root.getText('score')"></span>
+            <b data-bind="html:$data.score"></b>
+          </p>
+          <p class="level">
+            <span data-bind="html:$root.getText('level')"></span>
+            <b data-bind="html:$data.level"></b>
+          </p>
+        </div>
+        <div>
+          <span data-bind="html:$root.getText('time')"></span>
+          <b data-bind="html:$data.time"></b>
+        </div>
+        <!-- /ko -->
+        <div>
+          <button
+            class="voltar"
+            data-bind="click: function() { viewModel.screen('tutorial'); }"
+          ></button>
+          <button
+            class="info"
+            data-bind="click: function() { viewModel.tutorial(!viewModel.tutorial()); }"
+          ></button>
+        </div>
+      </section>
+
+      <section
+        id="playing2"
+        class="playing2"
+        data-bind="visible: (screen()=='playing' && selectedGame()=='2'), attr: { 'class': 'playing2 modal level' + game().theme() }"
+      >
+        <div class="memoryGame" data-bind="foreach : cards">
+          <div
+            class="card"
+            data-bind="click : $data.cardClick, attr: { 'class': 'card card' + $data.position() + ($data.virado() ? '' : ' virado') + ' type'+$data.type()}"
+          >
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="modal playAgain"
+        data-bind="visible:(screen()=='playAgainLose' || screen()=='playAgainWin')"
+      >
+        <div class="janela">
+          <h2
+            data-bind="html:getText('playAgainWin'),visible:screen()=='playAgainWin'"
+          ></h2>
+          <h2
+            data-bind="html:getText(viewModel.group()?'groupLose':'playAgainLose'),visible:screen()=='playAgainLose'"
+          ></h2>
+          <button
+            class="big"
+            data-bind="html:getText('playAgain'),click:goPlaying"
+          ></button
+          ><br />
+          <button
+            class="centrado"
+            data-bind="html:getText('login'), click:backToWelcome, visible:!token()"
+          ></button>
+          <button data-bind="html:getText('back'),click:goWorld"></button><br />
+        </div>
+      </section>
+
+      <section
+        class="modal modeSelect"
+        data-bind="visible:screen()=='modeSelect'"
+      >
+        <div class="janela">
+          <h2 data-bind="html:getText('pleaseChooseMode')"></h2>
+          <button
+            class="centrado"
+            data-bind="html:getText('playSingle'), click:goGameSingle"
+          ></button>
+          <button
+            class="centrado"
+            data-bind="html:getText('selectGroup'), click:goGroup"
+          ></button>
+        </div>
+      </section>
+
+      <section
+        class="modal outOfTime"
+        data-bind="visible:screen()=='outOfTime'"
+      >
+        <div class="janela">
+          <h2 data-bind="html:getText('outOfTime')"></h2>
+          <button
+            class="big centrado"
+            data-bind="html:getText('playAgain'), click:goPlaying"
+          ></button>
+          <button data-bind="html:getText('back'),click:goWorld"></button>
+        </div>
+      </section>
+
+      <section class="modal youLose" data-bind="visible:screen()=='youLose'">
+        <div class="janela">
+          <h2 data-bind="html:getText('youLose')"></h2>
+          <button
+            class="centrado big"
+            data-bind="html:getText('playAgain'),click:goPlaying"
+          ></button>
+          <button
+            class="centrado"
+            data-bind="click:goWorld,html:getText('back')"
+          ></button>
+        </div>
+      </section>
+
+      <section class="modal group" data-bind="visible:screen()=='group'">
+        <div class="janela">
+          <form>
+            <!-- ko if: group -->
+            <h2>
+              <span data-bind="html:getText('myGroup')"></span>
+              <span data-bind="html:group().name"></span>
+            </h2>
+            <button
+              class="big centrado"
+              data-bind="html:getText('play'), visible: group(), click:goGameGroup"
+            ></button>
+            <!-- /ko -->
+            <!--button data-bind="html:getText('quitGroup'), click:quitGroup">Quit Group</button-->
+            <button
+              class=""
+              data-bind="html:getText('createGroup'), click:goCreateGroup, visible: !viewModel.createdGroup()"
+            ></button>
+            <!-- ko if: group -->
+            <button
+              class="centrado"
+              data-bind="click:goEditGroup, visible: viewModel.createdGroup"
+            >
+              <span data-bind="html:getText('editGroup')"></span>
+              <span data-bind="html:group().name"></span>
+            </button>
+            <!-- /ko -->
+            <button
+              class=""
+              data-bind="html:getText('findGroup'), click:goFindGroup"
+            ></button>
+            <button
+              class=""
+              data-bind="html:getText('myGroups'), click:goMyGroups"
+            ></button>
+            <button
+              class="centrado"
+              data-bind="html:getText('back'), click:function() { goModeSelect(null); }"
+            ></button>
+          </form>
+        </div>
+      </section>
+
+      <section
+        class="modal editGroup"
+        data-bind="visible:screen()=='createGroup' || screen()=='editGroup'"
+      >
+        <div class="janela">
+          <form>
+            <h2 data-bind="text: getText('pleaseFillGroupInformation')"></h2>
+            <div class="fields">
+              <input
+                class="name"
+                type="text"
+                data-bind="value:groupEdit.name, attr: { placeholder: getText('name'), title: getText('name') }"
+              />
+              <textarea
+                class="description"
+                data-bind="value:groupEdit.description, attr: { placeholder: getText('description'), title: getText('description') }"
+              ></textarea>
+              <input
+                class="email"
+                type="text"
+                data-bind="value:groupEdit.email, attr: { placeholder: getText('email'), title: getText('email') }"
+              />
+              <input
+                class="phone"
+                type="text"
+                data-bind="value:groupEdit.phone, attr: { placeholder: getText('phone'), title: getText('phone') }"
+              />
+              <input
+                class="address"
+                type="text"
+                data-bind="value:groupEdit.address, attr: { placeholder: getText('address'), title: getText('address') }"
+              />
+              <input
+                class="city"
+                type="text"
+                data-bind="value:groupEdit.city, attr: { placeholder: getText('city'), title: getText('city') }"
+              />
+              <input
+                class="zip"
+                type="text"
+                data-bind="value:groupEdit.zip, attr: { placeholder: getText('zip'), title: getText('zip') }"
+              />
+              <input
+                class="country"
+                type="text"
+                data-bind="value:groupEdit.country, attr: { placeholder: getText('country'), title: getText('country') }"
+              />
+              <fieldset>
+                <!-- ko foreach: [{"type":"school","text":getText("school")},{"type":"youth","text":getText("youth")}] -->
+                <label data-bind="attr: { 'class': type }">
+                  <input
+                    type="radio"
+                    name="type"
+                    data-bind="value: $data.type, checked: $root.groupEdit.groupType"
+                  />
+                  <span data-bind="html:$data.text"></span>
+                </label>
+                <!-- /ko -->
+                <br />
+                <!-- ko foreach: [{"type":"portclub","text":getText("sportclub")},{"type":"friends","text":getText("friends")}] -->
+                <label data-bind="attr: { 'class': type }">
+                  <input
+                    type="radio"
+                    name="type"
+                    data-bind="value: $data.type, checked: $root.groupEdit.groupType"
+                  />
+                  <span data-bind="html:$data.text"></span>
+                </label>
+                <!-- /ko -->
+              </fieldset>
+            </div>
+            <button data-bind="text: getText('back'), click:backGroup"></button>
+            <button
+              data-bind="html:screen()=='createGroup'?getText('createGroup'):getText('saveGroup'), click:function() {screen()=='createGroup'?createGroup():editGroup()}"
+            ></button>
+          </form>
+        </div>
+      </section>
+
+      <section class="modal myGroups" data-bind="visible:screen()=='myGroups'">
+        <div class="janela">
+          <form>
+            <h2 data-bind="html:getText('myGroups')"></h2>
+            <div class="fields">
+              <ul data-bind="foreach: viewModel.myGroupsData">
+                <!-- ko with: {'open':ko.observable(false),'togle':function(data) { data.open(!data.open()); } ,'isMy':false,'group':$data} -->
+                <li data-bind="css: { myGroup: $data.isMy }">
+                  <div
+                    class="collapse"
+                    data-bind="click:$data.togle, css: { open: $data.open }, clickBuble: false  "
+                  >
+                    <span data-bind="html:$data.group.name"></span>
+                    <button data-bind="html:'Edit',visible:$data.isMy"></button>
+                    <div class="options">
+                      <div>
+                        <span data-bind="html:$root.getText('score')"></span>
+                        <span
+                          data-bind="html:($data.group.achievments && (parseInt($data.group.achievments.win1)+parseInt($data.group.achievments.win2)+parseInt($data.group.achievments.win3)))"
+                        ></span>
+                      </div>
+                      <button
+                        data-bind="html:'Play',click:function() { $root.goGroupPlay($data.group) }"
+                      ></button>
+                    </div>
+                  </div>
+                  <table data-bind="visible:$data.open">
+                    <tbody>
+                      <tr
+                        data-bind="foreach:  [
+                                                    {'achieved':$data.group.achievments && $data.group.achievments.win1>0,'enabled':true,'name':$root.getText('win1')},
+                                                    {'achieved':$data.group.achievments && $data.group.achievments.win2>0,'enabled':true,'name':$root.getText('win2')},
+                                                    {'achieved':$data.group.achievments && $data.group.achievments.win3>0,'enabled':false,'name':$root.getText('win3')}
+                                         ]"
+                      >
+                        <td data-bind="css: { achieved: $data.achieved }">
+                          <!-- ko if: $data.enabled -->
+                          <span data-bind="html:$data.name"></span>
+                          <!-- /ko -->
+                          <!-- ko if: !$data.enabled -->
+                          <span data-bind="html:'????????'"></span>
+                          <!-- /ko -->
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </li>
+                <!-- /ko -->
+              </ul>
+            </div>
+            <button data-bind="html:getText('back'), click:backGroup"></button>
+          </form>
+        </div>
+      </section>
+
+      <section
+        class="modal findGroup"
+        data-bind="visible:screen()=='findGroup'"
+      >
+        <div class="janela">
+          <input
+            type="text"
+            data-bind="value:filter, valueUpdate: 'afterkeydown', attr: { placeholder: getText('searchGroups') }"
+          />
+          <select
+            class="centrado"
+            multiple
+            data-bind="options: allGroupsFiltered,
+                   optionsText: function(item) {
+                       return item.name;
+                   },
+                   value: selectedGroup"
+          ></select>
+          <!-- ko if: selectedGroup() -->
+          <h3>
+            <span
+              data-bind="html:selectedGroup() && selectedGroup().name"
+            ></span>
+            <button
+              class="selectedGroup"
+              data-bind="html:getText('play'), visible: imInTheSelectedGroup(), click:goGameGroup"
+            ></button>
+            <button
+              class="selectedGroup"
+              data-bind="html:getText('joinGroup'), visible: !imInTheSelectedGroup() && groupSelected(), click:joinGroup"
+            ></button>
+          </h3>
+          <div class="rolagem">
+            <b data-bind="html:getText('owner')"></b>&nbsp<span
+              data-bind="html:selectedGroup() && selectedGroup().ownerName"
+            ></span
+            >&nbsp - &nbsp <b data-bind="html:getText('points')"></b>&nbsp<span
+              data-bind="html:(selectedGroup() && selectedGroup().achievments && (parseInt(selectedGroup().achievments.win1)+parseInt(selectedGroup().achievments.win2)+parseInt(selectedGroup().achievments.win3))) || '0'"
+            ></span>
+            <p
+              data-bind="html:selectedGroup() && selectedGroup().description"
+            ></p>
+            <b data-bind="html:getText('members')"></b>
+
+            <!-- ko foreach: selectedGroup().members() -->
+
+            <!-- ko if: $index -->
+            <span data-bind="html:','"></span>&nbsp
+            <!-- /ko -->
+
+            <span data-bind="html:$data"></span>
+
+            <!-- /ko -->
+            <br />
+          </div>
+          <!-- /ko -->
+          <button
+            class=""
+            data-bind="html:getText('back'), click:backGroup"
+          ></button>
+        </div>
+      </section>
+
+      <section
+        class="painel worldBackgroundPanel"
+        data-bind="visible: worldBackgroundPanel"
+      >
+        <div data-bind="visible: ($root.group() && $root.group().name)">
+          <span data-bind="html:$root.group() && $root.group().name"></span>
+        </div>
+        <div
+          data-bind="visible:token()!=null, css: { 'alone': !($root.group() && $root.group().name) }"
+        >
+          <span data-bind="html:name"></span>
+        </div>
+        <div>
+          <button
+            data-bind="click:soundOnOff,css: { sound: themePlaying, soundoff: !themePlaying() }"
+          ></button>
+          <button
+            class="share"
+            data-bind="click:simpleInvite,html:getText('invite')"
+          ></button>
+        </div>
+        <div>
+          <button class="zoomOut" data-bind="click: zoomOut"></button>
+          <button class="zoomIn" data-bind="click: zoomIn"></button>
+        </div>
+        <div>
+          <button
+            class="logout"
+            data-bind="visible:token()!=null, click:function(){ logout(); }, html:getText('logout')"
+          ></button>
+          <button
+            class="logout"
+            data-bind="visible:token()==null, click:function(){ logout(); }, html:getText('goLogin')"
+          ></button>
+          <button
+            class="info"
+            data-bind="click: function() { window.open('http://easterworld.leonidas.com/faq', '_blank', 'fullscreen=yes'); }"
+          ></button>
+        </div>
+      </section>
+
+      <section
+        id="world"
+        data-bind="visible: worldBackground, attr: { 'class': wave }"
+      >
+        <!--div class="seta top"></div>
+                <div class="seta left"></div>
+                <div class="seta bottom"></div>
+                <div class="seta right"></div-->
+
+        <div id="fundo" draggable="false">
+          <div class="mapa"></div>
+          <div class="referencia"></div>
+
+          <div class="world3">
+            <div id="arco">
+              <div class="coelhinho corpo"></div>
+              <div class="arco"></div>
+              <div class="coelhinho pata"></div>
+            </div>
+
+            <div class="arvore" id="arvore35">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore36">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore37">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore38">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore40">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="coelho tipo15" id="coelho25">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div id="catedral_2"></div>
+
+            <div id="obelisco"></div>
+
+            <div id="predio13"></div>
+            <div id="predio14"></div>
+            <div id="predio15"></div>
+
+            <div class="coelho tipo14" id="coelho26">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+            <div class="coelho tipo15" id="coelho27">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="arvore" id="arvore39">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="mesa_sombrinha violeta" id="mesa9"></div>
+            <div class="mesa_sombrinha violeta" id="mesa10"></div>
+
+            <div class="poste" id="poste9">
+              <div class="light"></div>
+            </div>
+            <div class="poste" id="poste10">
+              <div class="light"></div>
+            </div>
+
+            <div class="coqueiro" id="coqueiro1">
+              <div class="tronco"></div>
+              <div class="folhas"></div>
+            </div>
+            <div class="coqueiro" id="coqueiro2">
+              <div class="tronco"></div>
+              <div class="folhas"></div>
+            </div>
+
+            <div class="ave tipo11" id="ave15">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+            <div class="ave tipo12" id="ave16">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+
+            <div class="ovo" id="ovo47"></div>
+            <div class="ovo" id="ovo48"></div>
+
+            <!-- Não estão aparecendo -->
+            <div class="ovo" id="ovo49"></div>
+            <div class="ovo" id="ovo50"></div>
+
+            <div class="ovo" id="ovo51"></div>
+            <div class="ovo" id="ovo52"></div>
+
+            <div class="arvore" id="arvore41">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div id="catedral_1">
+              <div class="relogio"></div>
+            </div>
+
+            <div id="predio16"></div>
+
+            <div class="arvore" id="arvore42">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="mesa_sombrinha verde_agua" id="mesa11"></div>
+            <div class="mesa_sombrinha cinza" id="mesa12"></div>
+            <div class="mesa_sombrinha verde_agua" id="mesa13"></div>
+
+            <div class="coelho tipo13" id="coelho28">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="chafariz" id="chafariz_2">
+              <div class="agua"></div>
+              <div class="base"></div>
+            </div>
+
+            <div class="coelho tipo12" id="coelho29">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="ave tipo8" id="ave17">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+            <div class="ave tipo9" id="ave18">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+
+            <div class="poste" id="poste11">
+              <div class="light"></div>
+            </div>
+
+            <div class="ovo" id="ovo53"></div>
+            <div class="ovo" id="ovo54"></div>
+            <div class="ovo" id="ovo55"></div>
+            <div class="ovo" id="ovo56"></div>
+            <div class="ovo" id="ovo57"></div>
+
+            <div id="predio17"></div>
+            <div id="predio18"></div>
+            <div id="predio19">
+              <div class="coelhinho corpo"></div>
+              <div class="predio"></div>
+              <div class="coelhinho pata"></div>
+            </div>
+            <div id="predio20"></div>
+
+            <div class="poste" id="poste12">
+              <div class="light"></div>
+              <div class="laco azul"></div>
+            </div>
+            <div class="poste" id="poste13">
+              <div class="light"></div>
+              <div class="laco azul"></div>
+            </div>
+
+            <div class="coelho tipo11" id="coelho30">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="arvore" id="arvore43">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="ave tipo7" id="ave19">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+
+            <div id="passarinho_ovo_2">
+              <div class="casca_top"></div>
+              <div class="casca_corpo"></div>
+            </div>
+
+            <div class="carro_cenoura" id="carro_cenoura4">
+              <div class="rodinhas">
+                <div class="roda"></div>
+                <div class="roda"></div>
+              </div>
+              <div class="olho"></div>
+            </div>
+
+            <div class="ovo" id="ovo58"></div>
+            <div class="ovo" id="ovo59"></div>
+
+            <div class="coelho tipo20" id="coelho31">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+            <div class="coelho tipo20" id="coelho32">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+            <div class="coelho tipo20" id="coelho33">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="arvore" id="arvore44">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore45">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore46">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore47">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore48">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore49">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="pinheiro verde_escuro" id="pinheiro19"></div>
+            <div class="pinheiro verde_escuro" id="pinheiro20"></div>
+            <div class="pinheiro verde_claro" id="pinheiro21"></div>
+
+            <div class="gaivotas lago">
+              <div class="gaivota"></div>
+              <div class="gaivota"></div>
+            </div>
+
+            <div id="menino_parque"></div>
+
+            <div id="balanco"></div>
+            <div id="castelinho_1"></div>
+            <div id="castelinho_2"></div>
+
+            <div class="ave tipo15" id="ave20">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+              <div class="casca_top"></div>
+            </div>
+            <div class="ave tipo15" id="ave21">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+            <div class="ave tipo15" id="ave22">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+            <div class="ave tipo15" id="ave23">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+
+            <div class="poste" id="poste14">
+              <div class="light"></div>
+            </div>
+
+            <div class="ovo" id="ovo60"></div>
+            <div class="ovo" id="ovo61"></div>
+            <div class="ovo" id="ovo62"></div>
+            <div class="ovo" id="ovo63"></div>
+            <div class="ovo" id="ovo64"></div>
+            <div class="ovo" id="ovo65"></div>
+            <div class="ovo" id="ovo66"></div>
+            <div class="ovo" id="ovo67"></div>
+
+            <div class="arvore" id="arvore50">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore51">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore52">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore53">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div id="predio21"></div>
+            <div id="predio22"></div>
+
+            <div class="taxi amarelo"></div>
+
+            <div class="carro_cenoura" id="carro_cenoura5">
+              <div class="rodinhas">
+                <div class="roda"></div>
+                <div class="roda"></div>
+              </div>
+              <div class="olho"></div>
+            </div>
+            <div class="carro_cenoura" id="carro_cenoura6">
+              <div class="rodinhas">
+                <div class="roda"></div>
+                <div class="roda"></div>
+              </div>
+              <div class="olho"></div>
+            </div>
+
+            <div class="coelho tipo16" id="coelho34">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="ovo" id="ovo68"></div>
+
+            <div class="coelho tipo17" id="coelho35">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div id="predio23"></div>
+
+            <div class="taxi verde"></div>
+
+            <div class="arvore" id="arvore54">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="pinheiro verde" id="pinheiro22"></div>
+            <div class="pinheiro amarelo" id="pinheiro23"></div>
+            <div class="pinheiro verde" id="pinheiro24"></div>
+
+            <div class="ave tipo10" id="ave24">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+            <div class="ave tipo10" id="ave25">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+
+            <div class="poste" id="poste15">
+              <div class="light"></div>
+              <div class="laco verde"></div>
+            </div>
+
+            <div class="ovo" id="ovo69"></div>
+            <div class="ovo" id="ovo70"></div>
+            <div class="ovo" id="ovo71"></div>
+            <div class="ovo" id="ovo72"></div>
+
+            <div class="coqueiro" id="coqueiro9">
+              <div class="tronco escuro"></div>
+              <div class="folhas"></div>
+            </div>
+
+            <div id="predio24"></div>
+            <div id="predio25"></div>
+            <div id="predio26">
+              <div class="suporte"></div>
+              <div class="ovo"></div>
+            </div>
+            <div id="predio27"></div>
+
+            <div class="arvore" id="arvore55">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore56">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore57">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="coelho tipo18" id="coelho36">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+            <div class="coelho tipo19" id="coelho37">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="golfe" id="golfe_1">
+              <div class="buraco"></div>
+            </div>
+            <div class="golfe" id="golfe_2">
+              <div class="buraco"></div>
+            </div>
+
+            <div class="carro_golfe" id="carro_golfe_1"></div>
+            <div class="carro_golfe" id="carro_golfe_2"></div>
+
+            <div class="coqueiro" id="coqueiro3">
+              <div class="tronco escuro"></div>
+              <div class="folhas"></div>
+            </div>
+            <div class="coqueiro" id="coqueiro4">
+              <div class="tronco escuro"></div>
+              <div class="folhas"></div>
+            </div>
+            <div class="coqueiro" id="coqueiro5">
+              <div class="tronco escuro"></div>
+              <div class="folhas"></div>
+            </div>
+            <div class="coqueiro" id="coqueiro6">
+              <div class="tronco escuro"></div>
+              <div class="folhas"></div>
+            </div>
+            <div class="coqueiro" id="coqueiro7">
+              <div class="tronco escuro"></div>
+              <div class="folhas"></div>
+            </div>
+            <div class="coqueiro" id="coqueiro8">
+              <div class="tronco escuro"></div>
+              <div class="folhas"></div>
+            </div>
+
+            <div class="coqueiro" id="coqueiro10">
+              <div class="tronco escuro"></div>
+              <div class="folhas"></div>
+            </div>
+            <div class="coqueiro" id="coqueiro11">
+              <div class="tronco escuro"></div>
+              <div class="folhas"></div>
+            </div>
+
+            <div class="ave tipo14" id="ave26">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+            <div class="splash fogos" id="splash">
+              <div class="cinza explosao"></div>
+              <div class="cinza rastro"></div>
+            </div>
+            <div class="ave tipo14" id="ave27">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+            <div class="ave tipo13" id="ave28">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+
+            <div class="coracao" id="coracao_laranja"></div>
+
+            <div class="ave tipo14" id="ave29">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+
+            <div class="mesa_sombrinha verde_limao" id="mesa14"></div>
+            <div class="mesa_sombrinha laranja" id="mesa15"></div>
+            <div class="mesa_sombrinha laranja" id="mesa16"></div>
+
+            <div class="poste" id="poste16">
+              <div class="light"></div>
+            </div>
+            <div class="poste" id="poste17">
+              <div class="light"></div>
+            </div>
+            <div class="poste" id="poste18">
+              <div class="light"></div>
+            </div>
+
+            <div id="coelho_nadando"></div>
+
+            <div class="ovo" id="ovo73"></div>
+            <div class="ovo" id="ovo74"></div>
+            <div class="ovo" id="ovo75"></div>
+            <div class="ovo" id="ovo76"></div>
+            <div class="ovo" id="ovo77"></div>
+            <div class="ovo" id="ovo78"></div>
+            <div class="ovo" id="ovo79"></div>
+            <div class="ovo" id="ovo80"></div>
+            <div class="ovo" id="ovo81"></div>
+
+            <div class="barquinho" id="barquinho6">
+              <div class="barco"></div>
+              <div class="onda"></div>
+              <div class="bolhas">
+                <div class="bolha"></div>
+                <div class="bolha"></div>
+                <div class="bolha"></div>
+              </div>
+            </div>
+            <div class="barquinho" id="barquinho7">
+              <div class="barco"></div>
+              <div class="onda"></div>
+            </div>
+            <div class="barquinho" id="barquinho8">
+              <div class="barco"></div>
+              <div class="onda"></div>
+            </div>
+
+            <div class="barquinho" id="barquinho9">
+              <div class="barco"></div>
+              <div class="onda"></div>
+              <div class="bolhas">
+                <div class="bolha clara"></div>
+                <div class="bolha clara"></div>
+                <div class="bolha clara"></div>
+              </div>
+            </div>
+
+            <div class="balao_oceano" id="balao_oceano_1">
+              <div class="sombra"></div>
+            </div>
+            <div class="balao_oceano" id="balao_oceano_2">
+              <div class="coelho"></div>
+              <div class="sombra"></div>
+            </div>
+
+            <div class="barquinho" id="barquinho10">
+              <div class="barco"></div>
+              <div class="onda"></div>
+              <div class="bolhas">
+                <div class="bolha"></div>
+                <div class="bolha"></div>
+                <div class="bolha"></div>
+              </div>
+            </div>
+            <div class="barquinho" id="barquinho11">
+              <div class="barco"></div>
+              <div class="onda"></div>
+              <div class="bolhas">
+                <div class="bolha"></div>
+                <div class="bolha"></div>
+                <div class="bolha"></div>
+              </div>
+            </div>
+
+            <div id="monstro">
+              <div class="corpo">
+                <div class="parte"></div>
+                <div class="parte"></div>
+              </div>
+              <div class="cabeca"></div>
+              <div class="ondas">
+                <div class="onda"></div>
+                <div class="onda"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="world1">
+            <div class="montanha" id="montanha1"></div>
+
+            <div class="coelho azul" id="coelho0">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="montanha" id="montanha2"></div>
+
+            <div id="teleferico">
+              <div class="cabo"></div>
+              <div class="conjunto">
+                <div class="haste"></div>
+                <div class="bonde"></div>
+              </div>
+            </div>
+
+            <div id="estacao">
+              <div class="relogio"></div>
+              <div class="janelas">
+                <div class="janela"></div>
+                <div class="janela"></div>
+                <div class="janela"></div>
+                <div class="janela"></div>
+                <div class="janela"></div>
+                <div class="janela"></div>
+                <div class="janela"></div>
+                <div class="janela"></div>
+              </div>
+            </div>
+
+            <div class="poste" id="poste1">
+              <div class="light"></div>
+            </div>
+            <div class="pinheiro indigo" id="pinheiro1"></div>
+            <div class="pinheiro lilas" id="pinheiro2"></div>
+            <div class="pinheiro indigo" id="pinheiro3"></div>
+            <div class="pinheiro lilas" id="pinheiro4"></div>
+            <div class="pinheiro lilas" id="pinheiro5"></div>
+            <div class="pinheiro lilas" id="pinheiro6"></div>
+            <div class="pinheiro indigo" id="pinheiro7"></div>
+            <div class="pinheiro lilas" id="pinheiro8"></div>
+            <div class="pinheiro azul" id="pinheiro9"></div>
+            <div class="pinheiro azul" id="pinheiro10"></div>
+            <div class="pinheiro azul" id="pinheiro11"></div>
+            <div class="pinheiro azul" id="pinheiro12"></div>
+            <div class="pinheiro azul" id="pinheiro13"></div>
+            <div class="pinheiro azul" id="pinheiro14"></div>
+            <div class="pinheiro azul" id="pinheiro15"></div>
+            <div class="pinheiro azul" id="pinheiro18"></div>
+
+            <div id="boneco">
+              <div class="agua"></div>
+              <div class="braco esquerdo"></div>
+              <div class="braco direito"></div>
+              <div class="corpo"></div>
+              <div class="cabeca"></div>
+              <div class="orelha esquerda"></div>
+              <div class="orelha direita"></div>
+              <div class="botao cima"></div>
+              <div class="botao baixo"></div>
+              <div class="olho esquerdo"></div>
+              <div class="olho direito"></div>
+            </div>
+            <div class="plantas">
+              <div class="planta"></div>
+              <div class="planta"></div>
+              <div class="planta"></div>
+              <div class="planta"></div>
+              <div class="planta"></div>
+              <div class="planta"></div>
+              <div class="planta"></div>
+              <div class="planta"></div>
+              <div class="planta"></div>
+              <div class="planta"></div>
+            </div>
+
+            <div class="arvore" id="arvore5">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="galinheiro"></div>
+
+            <div class="arvore" id="arvore6">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="arvore" id="arvore7">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="ave azul" id="ave1">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+            <div class="ave azul" id="ave2">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+            <div class="ave verde" id="ave3">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+            <div class="ave verde" id="ave4">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+            <div class="ave creme" id="ave5">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+
+            <div class="coracao" id="coracao_rosa"></div>
+
+            <div class="ovo" id="ovo1"></div>
+            <div class="ovo" id="ovo2"></div>
+            <div class="ovo" id="ovo3"></div>
+            <div class="ovo" id="ovo4"></div>
+            <div class="ovo" id="ovo5"></div>
+            <div class="ovo" id="ovo6"></div>
+            <div class="ovo" id="ovo7"></div>
+            <div class="ovo" id="ovo9"></div>
+            <div class="ovo" id="ovo8"></div>
+            <div class="ovo" id="ovo10"></div>
+            <div class="ovo" id="ovo11"></div>
+            <div class="ovo" id="ovo12"></div>
+            <div class="ovo" id="ovo13"></div>
+            <div class="ovo" id="ovo14"></div>
+            <div class="ovo" id="ovo15"></div>
+            <div class="ovo" id="ovo16"></div>
+            <div class="ovo" id="ovo17"></div>
+            <div class="ovo" id="ovo18"></div>
+            <div class="ovo" id="ovo19"></div>
+            <div class="ovo" id="ovo20"></div>
+
+            <div class="coelho lilas" id="coelho1">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="coelho verde" id="coelho5">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="coelho verde" id="coelho6">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="carro_cenoura" id="carro_cenoura1">
+              <div class="rodinhas">
+                <div class="roda"></div>
+                <div class="roda"></div>
+              </div>
+              <div class="olho"></div>
+            </div>
+
+            <div
+              class="toPlay"
+              id="toPlay1"
+              data-bind="click : function(){ goModeSelect('1'); }"
+            ></div>
+
+            <div id="celeiro">
+              <div class="janelas">
+                <div class="janela"></div>
+                <div class="janela"></div>
+                <div class="janela"></div>
+              </div>
+            </div>
+
+            <div id="trator">
+              <div class="conjunto"></div>
+              <div class="roda" id="tratorRoda1"></div>
+              <div class="roda" id="tratorRoda2"></div>
+              <div class="roda" id="tratorRoda3"></div>
+              <div class="roda" id="tratorRoda4"></div>
+              <div class="coelhinho"></div>
+            </div>
+
+            <div class="ovelha" id="abduzida">
+              <div class="pata dianteira"></div>
+              <div class="pata traseira"></div>
+              <div class="corpo"></div>
+              <div class="cabeca"></div>
+            </div>
+            <div class="disco" id="disco">
+              <div class="luz" id="luz"></div>
+              <div class="sombra"></div>
+              <div class="ovni"></div>
+              <div class="farol" id="f1"></div>
+              <div class="farol" id="f2"></div>
+              <div class="farol" id="f3"></div>
+            </div>
+
+            <div class="montanha" id="montanha3"></div>
+            <div class="montanha" id="montanha4"></div>
+
+            <div id="observatorio">
+              <div class="porta"></div>
+              <div class="luneta">
+                <div class="lente"></div>
+              </div>
+            </div>
+
+            <div class="pinheiro azul" id="pinheiro16"></div>
+            <div class="pinheiro azul" id="pinheiro17"></div>
+
+            <div class="arvore" id="arvore3">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="arvore" id="arvore1">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="arvore" id="arvore2">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="arvore" id="arvore4">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="coelho azul" id="coelho3">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="coelho cinza" id="coelho4">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="balao"></div>
+          </div>
+
+          <div class="world2">
+            <div class="arvore" id="arvore29">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore30">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div id="predio10"></div>
+            <div id="predio11"></div>
+
+            <div class="coelho tipo10" id="coelho21">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+            <div class="coelho tipo10" id="coelho22">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div id="predio9"></div>
+            <div id="predio12"></div>
+
+            <div class="poste" id="poste7">
+              <div class="light"></div>
+              <div class="laco amarelo"></div>
+            </div>
+
+            <div class="ovo" id="ovo44"></div>
+            <div class="ovo" id="ovo45"></div>
+            <div class="ovo" id="ovo46"></div>
+
+            <div class="carro" id="carro4"></div>
+            <div class="carro" id="carro5"></div>
+
+            <div class="poste" id="poste8">
+              <div class="light"></div>
+            </div>
+
+            <div class="coelho tipo6" id="coelho17">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+            <div class="coelho tipo9" id="coelho23">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+            <div class="coelho tipo9" id="coelho24">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="carro_cenoura" id="carro_cenoura3">
+              <div class="rodinhas">
+                <div class="roda"></div>
+                <div class="roda"></div>
+              </div>
+              <div class="olho"></div>
+            </div>
+
+            <div class="arvore" id="arvore31">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore32">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore33">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore34">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div id="passarinho_ovo">
+              <div class="corpinho"></div>
+              <div class="casca_top"></div>
+              <div class="casca_corpo"></div>
+            </div>
+
+            <div id="monumento_arcos">
+              <div class="relogio"></div>
+            </div>
+
+            <div id="tunel"></div>
+
+            <div id="predio6"></div>
+            <div id="predio7"></div>
+            <div id="predio8"></div>
+
+            <div class="coelho tipo7" id="coelho18">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="coelho tipo7" id="coelho19">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+            <div class="coelho tipo8" id="coelho20">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="mesa_sombrinha azul" id="mesa7"></div>
+            <div class="mesa_sombrinha azul_escuro" id="mesa8"></div>
+
+            <div class="ave tipo4" id="ave12">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+            <div class="ave tipo5" id="ave13">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+            <div class="coracao" id="coracao_cinza"></div>
+            <div class="ave tipo5" id="ave14">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+
+            <div class="arvore" id="arvore23">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore24">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore25">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore26">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore27">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore28">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="ovo" id="ovo37"></div>
+            <div class="ovo" id="ovo38"></div>
+            <div class="ovo" id="ovo39"></div>
+            <div class="ovo" id="ovo40"></div>
+            <div class="ovo" id="ovo41"></div>
+            <div class="ovo" id="ovo42"></div>
+            <div class="ovo" id="ovo43"></div>
+
+            <div class="fogos" id="fogos_1">
+              <div class="roxo explosao"></div>
+              <div class="roxo rastro"></div>
+            </div>
+
+            <div class="fogos" id="fogos_2">
+              <div class="roxo explosao"></div>
+            </div>
+
+            <div class="fogos" id="fogos_3">
+              <div class="cinza explosao"></div>
+              <div class="cinza rastro"></div>
+            </div>
+
+            <div id="roda_gigante">
+              <div class="base fundo"></div>
+              <div class="ovos">
+                <div class="ovo"></div>
+                <div class="ovo"></div>
+                <div class="ovo"></div>
+                <div class="ovo"></div>
+                <div class="ovo"></div>
+                <div class="ovo"></div>
+                <div class="ovo"></div>
+                <div class="ovo"></div>
+              </div>
+              <div class="placa"></div>
+              <div class="base frente"></div>
+            </div>
+
+            <div id="ponte"></div>
+
+            <div class="coelho tipo6" id="coelho15">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div id="lojinha"></div>
+
+            <div class="mesa_sombrinha roxa" id="mesa6"></div>
+
+            <div class="poste" id="poste6">
+              <div class="light"></div>
+            </div>
+
+            <div class="arvore" id="arvore19">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore20">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="coelho tipo6" id="coelho16">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="arvore" id="arvore21">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore22">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="ave tipo1" id="ave10">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+              <div class="casca top"></div>
+            </div>
+            <div class="ave tipo1" id="ave11">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+
+            <div class="ovo" id="ovo31"></div>
+            <div class="ovo" id="ovo32"></div>
+            <div class="ovo" id="ovo33"></div>
+            <div class="ovo" id="ovo34"></div>
+            <div class="ovo" id="ovo35"></div>
+            <div class="ovo" id="ovo36"></div>
+
+            <div
+              class="toPlay"
+              id="toPlay2"
+              data-bind="click : function(){ goModeSelect('2'); }"
+            ></div>
+
+            <div class="carro_cenoura" id="carro_cenoura2">
+              <div class="rodinhas">
+                <div class="roda"></div>
+                <div class="roda"></div>
+              </div>
+              <div class="olho"></div>
+            </div>
+
+            <div id="predio1"></div>
+            <div id="predio2"></div>
+            <div id="predio3"></div>
+
+            <div class="carro" id="carro1"></div>
+            <div class="carro" id="carro2"></div>
+            <div class="carro" id="carro3"></div>
+
+            <div id="aeroporto"></div>
+
+            <div id="torre"></div>
+
+            <div class="coelho tipo2" id="coelho8">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="morrinho_roxo" id="morrinho_roxo1"></div>
+            <div class="morrinho_roxo" id="morrinho_roxo2"></div>
+
+            <div class="sino_voador" id="sino_voador1"></div>
+            <div class="sino_voador" id="sino_voador2"></div>
+
+            <div id="sino_voador_oceano"></div>
+
+            <div id="caminhao">
+              <div id="caminhao_ovos"></div>
+              <div id="caminhao_carroceria"></div>
+            </div>
+
+            <div class="arvore" id="arvore8">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="arvore" id="arvore9">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="arvore" id="arvore10">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="arvore" id="arvore11">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="arvore" id="arvore12">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="arvore" id="arvore13">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="arvore" id="arvore14">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="ave tipo2" id="ave6">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+
+            <div class="ave tipo2" id="ave7">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+
+            <div class="ovo" id="ovo21"></div>
+            <div class="ovo" id="ovo22"></div>
+
+            <div class="coelho tipo2" id="coelho9">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="coelho tipo1" id="coelho7">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="coelho tipo2" id="coelho10">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="poste" id="poste2">
+              <div class="light"></div>
+            </div>
+            <div class="poste" id="poste3">
+              <div class="light"></div>
+            </div>
+            <div class="poste" id="poste4">
+              <div class="light"></div>
+            </div>
+            <div class="poste" id="poste5">
+              <div class="light"></div>
+            </div>
+
+            <div id="predio4"></div>
+            <div id="predio5"></div>
+
+            <div class="chafariz" id="chafariz_1">
+              <div class="agua"></div>
+              <div class="base"></div>
+            </div>
+
+            <div class="mesa_sombrinha branca" id="mesa1"></div>
+            <div class="mesa_sombrinha branca" id="mesa2"></div>
+
+            <div class="coelho tipo3" id="coelho11">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+            <div class="coelho tipo3" id="coelho12">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="ave tipo3" id="ave8">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+
+            <div class="arvore" id="arvore15">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore16">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore17">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+            <div class="arvore" id="arvore18">
+              <div class="copa"></div>
+              <div class="tronco"></div>
+            </div>
+
+            <div class="mesa_sombrinha branca" id="mesa3"></div>
+            <div class="mesa_sombrinha lilas" id="mesa4"></div>
+            <div class="mesa_sombrinha verde" id="mesa5"></div>
+
+            <div id="peixaria1"></div>
+            <div id="peixaria2"></div>
+
+            <div id="barraquinha_peixe">
+              <div class="base"></div>
+              <div class="coelho"></div>
+              <div class="toldo"></div>
+            </div>
+
+            <div class="ovo" id="ovo23"></div>
+            <div class="ovo" id="ovo24"></div>
+            <div class="ovo" id="ovo25"></div>
+            <div class="ovo" id="ovo26"></div>
+            <div class="ovo" id="ovo27"></div>
+            <div class="ovo" id="ovo28"></div>
+            <div class="ovo" id="ovo29"></div>
+
+            <div id="plaquinha">
+              <div class="haste"></div>
+              <div class="barco"></div>
+            </div>
+
+            <div class="ovo" id="ovo30"></div>
+
+            <div id="mulher"></div>
+
+            <div class="coelho tipo4" id="coelho13">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div class="coelho tipo5" id="coelho14">
+              <div class="sentado">
+                <div class="pernas"></div>
+                <div class="orelha esquerda"></div>
+                <div class="orelha direita"></div>
+                <div class="corpo"></div>
+                <div class="olhos"></div>
+              </div>
+              <div class="correndo">
+                <div class="alto"></div>
+                <div class="baixo"></div>
+              </div>
+            </div>
+
+            <div id="gaivota_farol">
+              <div class="pe"></div>
+              <div class="gaivota"></div>
+            </div>
+
+            <div id="farol"></div>
+
+            <div class="ave tipo6" id="ave9">
+              <div class="pes"></div>
+              <div class="corpo"></div>
+              <div class="olhos"></div>
+            </div>
+
+            <div id="navio">
+              <div class="ovos"></div>
+              <div class="barcao"></div>
+              <div class="onda"></div>
+              <div class="bolhas">
+                <div class="bolha"></div>
+                <div class="bolha"></div>
+                <div class="bolha"></div>
+              </div>
+            </div>
+
+            <div class="barquinho" id="barquinho4">
+              <div class="barco"></div>
+              <div class="onda"></div>
+            </div>
+
+            <div class="barquinho" id="barquinho1">
+              <div class="barco"></div>
+              <div class="onda"></div>
+            </div>
+
+            <div class="barquinho" id="barquinho2">
+              <div class="barco"></div>
+              <div class="onda"></div>
+              <div class="bolhas">
+                <div class="bolha"></div>
+                <div class="bolha"></div>
+                <div class="bolha"></div>
+              </div>
+            </div>
+
+            <div class="barquinho" id="barquinho3">
+              <div class="barco"></div>
+              <div class="onda"></div>
+              <div class="bolhas">
+                <div class="bolha"></div>
+                <div class="bolha"></div>
+                <div class="bolha"></div>
+              </div>
+            </div>
+
+            <div class="barquinho" id="barquinho5">
+              <div class="barco"></div>
+              <div class="onda"></div>
+              <div class="bolhas">
+                <div class="bolha"></div>
+                <div class="bolha"></div>
+                <div class="bolha"></div>
+              </div>
+            </div>
+
+            <div id="tubarao">
+              <div class="barbatana"></div>
+              <div class="onda"></div>
+            </div>
+
+            <div class="gaivotas mar">
+              <div class="gaivota"></div>
+              <div class="gaivota"></div>
+              <div class="gaivota"></div>
+              <div class="gaivota"></div>
+            </div>
+          </div>
+
+          <div class="cloud"></div>
+          <div class="cloud"></div>
+          <div class="cloud"></div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
